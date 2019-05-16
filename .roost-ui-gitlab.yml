@@ -1,0 +1,224 @@
+#DEV
+dev_yarn_dependencies:
+  stage: frontend-dev-ui-yarn-install-dependencies
+  image: node:11
+  script:
+    - cd roost-ui
+    - yarn
+  cache:
+    key: "${CI_COMMIT_SHORT_SHA}-dev-dependencies"
+    paths:
+      - roost-ui/node_modules/
+  only:
+    refs:
+      - master
+    changes:
+      - roost-ui/**/*
+
+dev_yarn_test:
+  stage: frontend-dev-ui-yarn-test
+  image: node:11
+  script:
+    - cd roost-ui
+    - yarn test
+  cache:
+    key: "${CI_COMMIT_SHORT_SHA}-dev-dependencies"
+    paths:
+      - roost-ui/node_modules/
+  only:
+    refs:
+      - master
+    changes:
+      - roost-ui/**/*
+
+dev_ui_build:
+  stage: frontend-dev-ui-build
+  image: node:11
+  script: 
+    - cd roost-ui
+    - yarn run build
+  cache:
+    key: "${CI_COMMIT_SHORT_SHA}-dev-dependencies"
+    paths:
+      - roost-ui/node_modules/
+      - roost-ui/build
+  only:
+    refs:
+      - master
+    changes:
+      - roost-ui/**/*
+
+dev_ui_deploy:
+  stage: frontend-dev-ui-deploy
+  image: node:11
+  script: 
+    - apt-get update
+    - apt-get install -y python-pip
+    - apt-get install groff -y
+    - pip --no-cache-dir install --upgrade awscli
+    - cd roost-ui
+    - aws s3 sync --region eu-west-2 --acl public-read /builds/thecollective/roost-frontend/roost-ui/build s3://csi-dev-frontend --delete
+  cache:
+    key: "${CI_COMMIT_SHORT_SHA}-dev-dependencies"
+    paths:
+      - roost-ui/node_modules/
+      - roost-ui/build
+  only:
+    refs:
+      - master
+    changes:
+      - roost-ui/**/*
+  environment:
+    name: Dev UI
+    url: https://csi-dev.thecollective.com
+
+
+#STAGING
+staging_yarn_dependencies:
+  stage: frontend-staging-ui-yarn-install-dependencies
+  image: node:11
+  script:
+    - cd roost-ui
+    - yarn
+  cache:
+    key: "${CI_COMMIT_SHORT_SHA}-staging-dependencies"
+    paths:
+      - roost-ui/node_modules/
+  only:
+    refs:
+      - master
+    changes:
+      - roost-ui/**/*
+
+staging_yarn_test:
+  stage: frontend-staging-ui-yarn-test
+  image: node:11
+  script:
+    - cd roost-ui
+    - yarn test
+  cache:
+    key: "${CI_COMMIT_SHORT_SHA}-staging-dependencies"
+    paths:
+      - roost-ui/node_modules/
+  only:
+    refs:
+      - master
+    changes:
+      - roost-ui/**/*
+
+staging_ui_build:
+  stage: frontend-staging-ui-build
+  image: node:11
+  script: 
+    - cd roost-ui
+    - yarn run build
+  cache:
+    key: "${CI_COMMIT_SHORT_SHA}-staging-dependencies"
+    paths:
+      - roost-ui/node_modules/
+      - roost-ui/build
+  only:
+    refs:
+      - master
+    changes:
+      - roost-ui/**/*
+
+staging_ui_deploy:
+  stage: frontend-staging-ui-deploy
+  image: node:11
+  script: 
+    - apt-get update
+    - apt-get install -y python-pip
+    - apt-get install groff -y
+    - pip --no-cache-dir install --upgrade awscli
+    - cd roost-ui
+    - aws s3 sync --region eu-west-2 --acl public-read /builds/thecollective/roost-frontend/roost-ui/build s3://csi-staging-frontend --delete
+  cache:
+    key: "${CI_COMMIT_SHORT_SHA}-staging-dependencies"
+    paths:
+      - roost-ui/node_modules/
+      - roost-ui/build
+  only:
+    refs:
+      - master
+    changes:
+      - roost-ui/**/*
+  environment:
+    name: Dev UI
+    url: https://csi-staging.thecollective.com
+
+
+#PROD
+prod_yarn_dependencies:
+  stage: frontend-prod-ui-yarn-install-dependencies
+  image: node:11
+  script:
+    - cd roost-ui
+    - yarn
+  cache:
+    key: "${CI_COMMIT_SHORT_SHA}-prod-dependencies"
+    paths:
+      - roost-ui/node_modules/
+  only:
+    refs:
+      - master
+    changes:
+      - roost-ui/**/*
+
+prod_yarn_test:
+  stage: frontend-prod-ui-yarn-test
+  image: node:11
+  script:
+    - cd roost-ui
+    - yarn test
+  cache:
+    key: "${CI_COMMIT_SHORT_SHA}-prod-dependencies"
+    paths:
+      - roost-ui/node_modules/
+  only:
+    refs:
+      - master
+    changes:
+      - roost-ui/**/*
+
+prod_ui_build:
+  stage: frontend-prod-ui-build
+  image: node:11
+  script: 
+    - cd roost-ui
+    - yarn run build
+  cache:
+    key: "${CI_COMMIT_SHORT_SHA}-prod-dependencies"
+    paths:
+      - roost-ui/node_modules/
+      - roost-ui/build
+  only:
+    refs:
+      - master
+    changes:
+      - roost-ui/**/*
+
+prod_ui_deploy:
+  stage: frontend-prod-ui-deploy
+  image: node:11
+  script: 
+    - apt-get update
+    - apt-get install -y python-pip
+    - apt-get install groff -y
+    - pip --no-cache-dir install --upgrade awscli
+    - cd roost-ui
+    - aws s3 sync --region eu-west-2 --acl public-read /builds/thecollective/roost-frontend/roost-ui/build s3://csi-prod-frontend --delete
+  cache:
+    key: "${CI_COMMIT_SHORT_SHA}-prod-dependencies"
+    paths:
+      - roost-ui/node_modules/
+      - roost-ui/build
+  only:
+    refs:
+      - master
+    changes:
+      - roost-ui/**/*
+  environment:
+    name: Dev UI
+    url: https://csi-prod.thecollective.com
+  when: manual

@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<VisitsPanel /> renders correctly with data 1`] = `
+<Boundary>
+  <Styled(div)>
+    <CSSTransitionGroup
+      key="NaN"
+      transitionAppear={true}
+      transitionAppearTimeout={200}
+      transitionEnter={true}
+      transitionEnterTimeout={200}
+      transitionLeave={true}
+      transitionLeaveTimeout={200}
+      transitionName="expand"
+    >
+      <Styled(WithStyles(Paper))
+        style={
+          Object {
+            "opacity": 0.6,
+          }
+        }
+      >
+        <Styled(div)>
+          <Styled(div)>
+            <Styled(span)>
+              this is a date - this is a date
+            </Styled(span)>
+            <Styled(span)>
+              this is a time - this is a time
+            </Styled(span)>
+          </Styled(div)>
+          <Styled(div)>
+            Default, Boiler, 1.11
+          </Styled(div)>
+        </Styled(div)>
+        <Styled(div)>
+          Inactive
+        </Styled(div)>
+      </Styled(WithStyles(Paper))>
+    </CSSTransitionGroup>
+    <CSSTransitionGroup
+      key="NaN"
+      transitionAppear={true}
+      transitionAppearTimeout={200}
+      transitionEnter={true}
+      transitionEnterTimeout={200}
+      transitionLeave={true}
+      transitionLeaveTimeout={200}
+      transitionName="expand"
+    >
+      <Styled(WithStyles(Paper))
+        style={
+          Object {
+            "opacity": 0.6,
+          }
+        }
+      >
+        <Styled(div)>
+          <Styled(div)>
+            <Styled(span)>
+              this is a date - this is a date
+            </Styled(span)>
+            <Styled(span)>
+              this is a time - this is a time
+            </Styled(span)>
+          </Styled(div)>
+          <Styled(div)>
+            Default, Boiler, 1.11
+          </Styled(div)>
+        </Styled(div)>
+        <Styled(div)>
+          Inactive
+        </Styled(div)>
+      </Styled(WithStyles(Paper))>
+    </CSSTransitionGroup>
+  </Styled(div)>
+</Boundary>
+`;
+
+exports[`<VisitsPanel /> renders correctly with no data 1`] = `
+<Boundary>
+  <Styled(div) />
+</Boundary>
+`;

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Layout /> Does not re-render on children props change 1`] = `
+<Boundary>
+  <Styled(div)>
+    <Styled(div)>
+      <Header />
+      <inject-Breadcrumb-with-routing />
+    </Styled(div)>
+    <Styled(div)>
+      Goodbye
+    </Styled(div)>
+  </Styled(div)>
+</Boundary>
+`;
+
+exports[`<Layout /> passes on props correctly 1`] = `
+<Boundary>
+  <Styled(div)>
+    <Styled(div)>
+      <Header />
+      <inject-Breadcrumb-with-routing />
+    </Styled(div)>
+    <Styled(div)>
+      bar
+    </Styled(div)>
+  </Styled(div)>
+</Boundary>
+`;
+
+exports[`<Layout /> renders correctly 1`] = `
+<Boundary>
+  <Styled(div)>
+    <Styled(div)>
+      <Header />
+      <inject-Breadcrumb-with-routing />
+    </Styled(div)>
+    <Styled(div) />
+  </Styled(div)>
+</Boundary>
+`;

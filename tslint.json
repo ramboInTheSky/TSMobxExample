@@ -1,0 +1,53 @@
+{
+	"plugins": ["prettier"],
+	"extends": [
+		"tslint:recommended",
+		"tslint-react",
+		"tslint-config-prettier",
+		"tslint-config-airbnb"
+	],
+	"rules": {
+		"no-console": false,
+		"no-unused-variable": false,
+		"interface-name": [true, "never-prefix"],
+		"object-literal-sort-keys": false,
+		"jsx-no-lambda": false,
+		"ordered-imports": false,
+		"ban-types": false,
+		"semi": false,
+		"jsx-alignment": true,
+		"jsx-boolean-value": true,
+		"jsx-curly-spacing": [true, "never"],
+		"jsx-equals-spacing": [true, "never"],
+		"jsx-key": true,
+		"jsx-no-bind": true,
+		"jsx-no-multiline-js": true,
+		"jsx-no-string-ref": true,
+		"jsx-self-close": true,
+		"jsx-wrap-multiline": true,
+		"import/no-extraneous-dependencies": 0,
+		"react/forbid-prop-types": 0,
+		"react/jsx-filename-extension": 0,
+		"react/prefer-stateless-function": 1,
+		"linebreak-style": false,
+		"react/sort-prop-types": [
+			1,
+			{
+				"callbacksLast": false,
+				"ignoreCase": true,
+				"requiredFirst": true,
+				"sortShapeProp": true
+			}
+		],
+		"prettier/prettier": 1
+	},
+	"linterOptions": {
+		"exclude": [
+			"**/*.js",
+			"**/*.jsx",
+			"config/**/*.js",
+			"node_modules/**/*.ts",
+			"coverage/lcov-report/*.js"
+		]
+	}
+}

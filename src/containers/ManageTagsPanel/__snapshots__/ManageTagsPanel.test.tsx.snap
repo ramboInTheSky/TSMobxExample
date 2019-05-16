@@ -1,0 +1,241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ManageTagsPanel /> correctly add a tag 1`] = `
+<ManageTagsPanel
+  addTag={[MockFunction]}
+  profiles={
+    ProfileStore {
+      "apiEnded": [Function],
+      "count": 0,
+      "data": Array [],
+      "detail": Object {},
+      "edit": false,
+      "error": undefined,
+      "fresh": false,
+      "isFresh": [Function],
+      "loading": false,
+      "url": "https://csi-dev.thecollective.com/ac-api/profile",
+    }
+  }
+  routing={
+    RoutingMock {
+      "breadcrumb": Array [],
+      "getBreadcrumb": [MockFunction],
+      "go": [MockFunction],
+      "goBack": [MockFunction],
+      "goBackToPage": [MockFunction],
+      "goForward": [MockFunction],
+      "goToPage": [MockFunction],
+      "history": Object {},
+      "location": Object {},
+      "push": [MockFunction],
+      "replace": [MockFunction],
+      "splitThings": [MockFunction],
+    }
+  }
+  visits={
+    VisitsMock {
+      "addTag": [Function],
+      "archetypes": Object {
+        "primary": Array [],
+        "secondary": Array [],
+      },
+      "clearErrors": [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+      "detail": Visit {
+        "archetypeIds": Array [],
+        "fromDate": "",
+        "id": "",
+        "lockGroups": Array [],
+        "tags": Array [],
+        "toDate": "",
+      },
+      "getArchetypes": [MockFunction],
+      "item": [Function],
+      "simulateValidationError": [Function],
+      "validationError": undefined,
+    }
+  }
+/>
+`;
+
+exports[`<ManageTagsPanel /> renders correctly with no data 1`] = `
+<ManageTagsPanel
+  addTag={[MockFunction]}
+  profiles={
+    ProfileStore {
+      "apiEnded": [Function],
+      "fresh": false,
+      "isFresh": [Function],
+      "url": "https://csi-dev.thecollective.com/ac-api/profile",
+    }
+  }
+  routing={
+    RoutingMock {
+      "breadcrumb": Array [],
+      "getBreadcrumb": [MockFunction],
+      "go": [MockFunction],
+      "goBack": [MockFunction],
+      "goBackToPage": [MockFunction],
+      "goForward": [MockFunction],
+      "goToPage": [MockFunction],
+      "history": Object {},
+      "location": Object {},
+      "push": [MockFunction],
+      "replace": [MockFunction],
+      "splitThings": [MockFunction],
+    }
+  }
+  visits={
+    VisitsMock {
+      "addTag": [Function],
+      "archetypes": Object {
+        "primary": Array [],
+        "secondary": Array [],
+      },
+      "clearErrors": [MockFunction],
+      "detail": Visit {
+        "archetypeIds": Array [],
+        "fromDate": "",
+        "id": "",
+        "lockGroups": Array [],
+        "tags": Array [],
+        "toDate": "",
+      },
+      "getArchetypes": [MockFunction],
+      "item": [Function],
+      "simulateValidationError": [Function],
+      "validationError": undefined,
+    }
+  }
+/>
+`;
+
+exports[`<ManageTagsPanel /> returns a vaildation error when the tag API returns an error 1`] = `
+<ManageTagsPanel
+  addTag={[MockFunction]}
+  profiles={
+    ProfileStore {
+      "apiEnded": [Function],
+      "fresh": false,
+      "isFresh": [Function],
+      "url": "https://csi-dev.thecollective.com/ac-api/profile",
+    }
+  }
+  routing={
+    RoutingMock {
+      "breadcrumb": Array [],
+      "getBreadcrumb": [MockFunction],
+      "go": [MockFunction],
+      "goBack": [MockFunction],
+      "goBackToPage": [MockFunction],
+      "goForward": [MockFunction],
+      "goToPage": [MockFunction],
+      "history": Object {},
+      "location": Object {},
+      "push": [MockFunction],
+      "replace": [MockFunction],
+      "splitThings": [MockFunction],
+    }
+  }
+  visits={
+    VisitsMock {
+      "addTag": [Function],
+      "archetypes": Object {
+        "primary": Array [],
+        "secondary": Array [],
+      },
+      "clearErrors": [MockFunction],
+      "detail": Visit {
+        "archetypeIds": Array [],
+        "fromDate": "",
+        "id": "",
+        "lockGroups": Array [],
+        "tags": Array [],
+        "toDate": "",
+      },
+      "getArchetypes": [MockFunction],
+      "item": [Function],
+      "simulateValidationError": [Function],
+      "validationError": "this is an error",
+    }
+  }
+/>
+`;
+
+exports[`<ManageTagsPanel /> shows validation error when adding an invalid tag number 1`] = `
+<ManageTagsPanel
+  addTag={[MockFunction]}
+  profiles={
+    ProfileStore {
+      "apiEnded": [Function],
+      "count": 0,
+      "data": Array [],
+      "detail": Object {},
+      "edit": false,
+      "error": undefined,
+      "fresh": false,
+      "isFresh": [Function],
+      "loading": false,
+      "url": "https://csi-dev.thecollective.com/ac-api/profile",
+    }
+  }
+  routing={
+    RoutingMock {
+      "breadcrumb": Array [],
+      "getBreadcrumb": [MockFunction],
+      "go": [MockFunction],
+      "goBack": [MockFunction],
+      "goBackToPage": [MockFunction],
+      "goForward": [MockFunction],
+      "goToPage": [MockFunction],
+      "history": Object {},
+      "location": Object {},
+      "push": [MockFunction],
+      "replace": [MockFunction],
+      "splitThings": [MockFunction],
+    }
+  }
+  visits={
+    VisitsMock {
+      "addTag": [Function],
+      "archetypes": Object {
+        "primary": Array [],
+        "secondary": Array [],
+      },
+      "clearErrors": [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      },
+      "detail": Visit {
+        "archetypeIds": Array [],
+        "fromDate": "",
+        "id": "",
+        "lockGroups": Array [],
+        "tags": Array [],
+        "toDate": "",
+      },
+      "getArchetypes": [MockFunction],
+      "item": [Function],
+      "simulateValidationError": [Function],
+      "validationError": undefined,
+    }
+  }
+/>
+`;

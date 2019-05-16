@@ -1,0 +1,144 @@
+import React, { Component, Fragment } from 'react'
+import { observer, inject } from 'mobx-react'
+
+import AddIcon from '@material-ui/icons/Add'
+// import EditIcon from '@material-ui/icons/Edit'
+import Button from '@material-ui/core/Button'
+import Loader from 'react-loader'
+
+import { Layout, Grid, Search, ErrorMessage } from '../../components/'
+import { ProfileStore, StoreNames, Stores } from '../../stores'
+import { ActionBar, Action, SearchWrapper, Title, ActionIcon } from './Components'
+import { Routing } from '../../stores/Routing'
+
+// internal props
+export interface ProfilesProps {}
+// MobX props
+interface ProfilesConnectedProps extends ProfilesProps {
+	profiles: ProfileStore
+	routing: Routing
+}
+// intersection of all props
+
+@inject(StoreNames.profiles, StoreNames.routing)
+@observer
+export class Profiles extends Component<ProfilesProps> {
+	get store(){
+		return this.props as ProfilesConnectedProps
+	}
+	colDef = [
+		{
+			headerName: 'Name',
+			field: 'fullName',
+			minWidth: 70,
+		},
+		{
+			headerName: 'Type',
+			width: 70,
+			field: 'type',
+		},
+		{
+			headerName: 'Created',
+			minWidth: 110,
+			width: 120,
+			field: 'created',
+			cellRenderer: (row: any) => new Date(row.value).toLocaleDateString(),
+		},
+		{
+			headerName: 'Email',
+			minWidth: 250,
+			field: 'emailAddress',
+		},
+		{
+			headerName: 'Phone',
+			minWidth: 120,
+			field: 'mobileNumber',
+		},
+		{
+			headerName: 'Company',
+			minWidth: 70,
+			field: 'company',
+		},
+		{
+			headerName: 'Notes',
+			minWidth: 70,
+			field: 'notes',
+		},
+		{
+			headerName: 'Visits',
+			width: 90,
+			minWidth: 90,
+			field: 'visits',
+			cellRenderer: (row: any) => row.value.length,
+		},
+		// {
+		// 	headerName: 'Actions',
+		// 	width: 70,
+		// 	field: 'id',
+		// 	cellRendererFramework: (row: any) => (
+		// 		<ActionIcon
+		// 			aria-label="Edit Profile"
+		// 			title="Edit Profile"
+		// 			onClick={() => this.goToDetail(row.value, true)}
+		// 		>
+		// 			<EditIcon data-title="Edit Profile" />
+		// 		</ActionIcon>
+		// 	),
+		// },
+	]
+	constructor(props: ProfilesProps) {
+		super(props)
+	}
+	componentDidMount() {
+		this.store.profiles.getList()
+	}
+
+	goToDetail = (id: string, edit?: boolean) => {
+		// TODO define row type
+		this.store.profiles.toggleEditing(edit)
+		this.store.routing.goToPage(`/profile/${id}`)
+	}
+
+	onChange = (e: any, val?: string) => {
+		const { target: { value } } = e
+		this.store.profiles.getList(val || value)
+	}
+
+	render() {
+		// const data = this.store.profiles.getItems()
+		const { isLoading, isError, errorMessage, items } = this.store.profiles
+		return (
+			<Layout>
+				<Title>Profiles</Title>
+				{isError ? (
+					<ErrorMessage>{errorMessage}</ErrorMessage>
+				) : (
+					<Fragment>
+						<ActionBar>
+							<SearchWrapper>
+								<Search onChange={this.onChange} />
+							</SearchWrapper>
+							<Action
+								aria-label="Add Profile"
+								title="Add Profile"
+								onClick={() => this.goToDetail('new', true)}
+							>
+								<Button variant="contained" color="primary">
+									<AddIcon />&nbsp;Add Profile
+								</Button>
+							</Action>
+						</ActionBar>
+						<Loader loaded={!isLoading}>
+							<Grid
+								loading={isLoading}
+								columnDefs={this.colDef}
+								rowData={isLoading ? [] : items}
+								onRowClicked={row => this.goToDetail(row.data.id, false)}
+							/>
+						</Loader>
+					</Fragment>
+				)}
+			</Layout>
+		)
+	}
+}

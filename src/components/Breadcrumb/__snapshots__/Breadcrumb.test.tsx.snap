@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Breadcrumb /> renders correctly 1`] = `
+<Breadcrumb
+  routing={
+    RoutingMock {
+      "breadcrumb": Array [],
+      "getBreadcrumb": [MockFunction],
+      "go": [MockFunction],
+      "goBack": [MockFunction],
+      "goBackToPage": [MockFunction],
+      "goForward": [MockFunction],
+      "goToPage": [MockFunction],
+      "history": Object {},
+      "location": Object {},
+      "push": [MockFunction],
+      "replace": [MockFunction],
+      "splitThings": [MockFunction],
+    }
+  }
+/>
+`;

@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> renders correctly 1`] = `
+<Boundary>
+  <Styled(div)>
+    <Styled(img)
+      alt="The Collective"
+      src="logo_dark_vertical.svg"
+    />
+    <Styled(div)>
+      ROOST
+    </Styled(div)>
+    <div
+      id="anchor-000"
+    >
+      <Styled(WithStyles(IconButton))
+        aria-haspopup="true"
+        aria-owns="Settings"
+        onClick={[Function]}
+      >
+        <pure(SettingsIcon) />
+      </Styled(WithStyles(IconButton))>
+      <WithStyles(Menu)
+        anchorEl={null}
+        aria-label="Settings"
+        id="Settings"
+        onClose={[Function]}
+        open={false}
+        title="Settings"
+      >
+        <WithStyles(MenuItem)
+          onClick={[Function]}
+        >
+          UI version: 
+          0.1.1
+        </WithStyles(MenuItem)>
+        <WithStyles(MenuItem)
+          onClick={[Function]}
+        >
+          Build number: 1.0.0
+        </WithStyles(MenuItem)>
+      </WithStyles(Menu)>
+    </div>
+  </Styled(div)>
+</Boundary>
+`;
