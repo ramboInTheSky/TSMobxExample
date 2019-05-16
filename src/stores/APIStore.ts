@@ -7,7 +7,6 @@ export { observable, action }
 
 export class Store<T> {
 	private url: string
-	private fresh = false
 
 	@observable protected data: Array<T> = []
 
@@ -22,11 +21,10 @@ export class Store<T> {
 	constructor(uri: string) {
 		this.url = uri
 	}
+	
+	
 	// public API
-	// public getItems = (): Array<T> => {
-	// 	return toJS(this.data) as Array<T>
-	// }
-
+	
 	public get items(): Array<T> {
 		return toJS(this.data) as Array<T>
 	}
@@ -34,10 +32,6 @@ export class Store<T> {
 	public get item(): T {
 		return toJS(this.detail) as T
 	}
-
-	// public getItem = (): T => {
-	// 	return toJS(this.detail) as T
-	// }
 
 	public get errorMessage(): string {
 		return this.error as string
@@ -51,17 +45,12 @@ export class Store<T> {
 		return !!this.error
 	}
 
-	public isFresh = () => this.fresh
 	// end public API
 
 	protected apiEnded = (e?: any, customMessage?: string) => {
 		this.loading = false
 		this.error = e ? customMessage || getErrorCode(e) : undefined
-		this.fresh = true
 		const self = this
-		setTimeout(function () {
-			self.fresh = false
-		})
 	}
 
 	@action
