@@ -1,241 +1,615 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ManageTagsPanel /> correctly add a tag 1`] = `
-<ManageTagsPanel
-  addTag={[MockFunction]}
-  profiles={
-    ProfileStore {
-      "apiEnded": [Function],
-      "count": 0,
-      "data": Array [],
-      "detail": Object {},
-      "edit": false,
-      "error": undefined,
-      "fresh": false,
-      "isFresh": [Function],
-      "loading": false,
-      "url": "https://csi-dev.thecollective.com/ac-api/profile",
-    }
-  }
-  routing={
-    RoutingMock {
-      "breadcrumb": Array [],
-      "getBreadcrumb": [MockFunction],
-      "go": [MockFunction],
-      "goBack": [MockFunction],
-      "goBackToPage": [MockFunction],
-      "goForward": [MockFunction],
-      "goToPage": [MockFunction],
-      "history": Object {},
-      "location": Object {},
-      "push": [MockFunction],
-      "replace": [MockFunction],
-      "splitThings": [MockFunction],
-    }
-  }
-  visits={
-    VisitsMock {
-      "addTag": [Function],
-      "archetypes": Object {
-        "primary": Array [],
-        "secondary": Array [],
-      },
-      "clearErrors": [MockFunction] {
-        "calls": Array [
-          Array [],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
-      },
-      "detail": Visit {
-        "archetypeIds": Array [],
-        "fromDate": "",
-        "id": "",
-        "lockGroups": Array [],
-        "tags": Array [],
-        "toDate": "",
-      },
-      "getArchetypes": [MockFunction],
-      "item": [Function],
-      "simulateValidationError": [Function],
-      "validationError": undefined,
-    }
-  }
-/>
+<Styled(div)>
+  <Styled(WithStyles(Paper))>
+    <Boundary>
+      <Styled(div)>
+        <Styled(span)>
+          <Styled(span)>
+            <pure(PersonIcon) />
+            undefined undefined
+          </Styled(span)>
+          <span>
+            <pure(KeyboardArrowRightIcon) />
+          </span>
+          <span>
+            <pure(HotelIcon) />
+             Visit  
+          </span>
+          <Styled(span)>
+            The Future
+          </Styled(span)>
+          <span>
+            <pure(ArrowForwardIcon) />
+          </span>
+          <Styled(span)>
+            The Future
+          </Styled(span)>
+          <span>
+            <pure(KeyboardArrowRightIcon) />
+          </span>
+          <span>
+            <pure(VpnKeyIcon) />
+             Manage Tags
+          </span>
+        </Styled(span)>
+      </Styled(div)>
+    </Boundary>
+    <Boundary>
+      <Styled(div)>
+        <Styled(div)
+          elevation={1}
+        >
+          <Styled(WithStyles(IconButton))
+            aria-label="Clear"
+            id="add-tag-input-clear"
+            onClick={[Function]}
+            title="Clear Search"
+          >
+            <pure(CloseIcon) />
+          </Styled(WithStyles(IconButton))>
+          <Styled(TextField)
+            error="Tag numbers should be at least 6 digits"
+            helperText="Tag numbers should be at least 6 digits"
+            id="add-tag-input-field"
+            name="add-tag-input-field"
+            onChange={[Function]}
+            placeholder="Add a Tag number"
+            required={false}
+            select={false}
+            type="number"
+            value="123123"
+            variant="standard"
+          />
+          <Component
+            component="div"
+            loaded={true}
+            loadedClassName="loadedContent"
+            parentClassName="loader"
+          >
+            <Styled(WithStyles(IconButton))
+              aria-label="Search"
+              id="add-tag-input-button"
+              onClick={[Function]}
+              title="Search"
+            >
+              <pure(AddIcon) />
+            </Styled(WithStyles(IconButton))>
+          </Component>
+        </Styled(div)>
+      </Styled(div)>
+    </Boundary>
+  </Styled(WithStyles(Paper))>
+  <Boundary>
+    <Styled(div)>
+      <Styled(div)>
+        <WithStyles(Button)
+          className="detail-panel-manage-rooms-button"
+          color="primary"
+          onClick={[Function]}
+          variant="contained"
+        >
+          <pure(MeetingRoomIcon) />
+           
+          Manage Access
+        </WithStyles(Button)>
+        <WithStyles(Button)
+          className="manage-tags-panel-done-button"
+          color="primary"
+          onClick={[Function]}
+          variant="contained"
+        >
+          <pure(CheckCircleIcon) />
+            Done
+        </WithStyles(Button)>
+      </Styled(div)>
+    </Styled(div)>
+  </Boundary>
+</Styled(div)>
+`;
+
+exports[`<ManageTagsPanel /> renders correctly when coming from new Visit 1`] = `
+<Styled(div)>
+  <Styled(WithStyles(Paper))>
+    <Boundary>
+      <Styled(div)>
+        <Styled(span)>
+          <Styled(span)>
+            <pure(PersonIcon) />
+            undefined undefined
+          </Styled(span)>
+          <span>
+            <pure(KeyboardArrowRightIcon) />
+          </span>
+          <span>
+            <pure(HotelIcon) />
+             Visit  
+          </span>
+          <Styled(span)>
+            The Future
+          </Styled(span)>
+          <span>
+            <pure(ArrowForwardIcon) />
+          </span>
+          <Styled(span)>
+            The Future
+          </Styled(span)>
+          <span>
+            <pure(KeyboardArrowRightIcon) />
+          </span>
+          <span>
+            <pure(VpnKeyIcon) />
+             Manage Tags
+          </span>
+        </Styled(span)>
+      </Styled(div)>
+    </Boundary>
+    <Boundary>
+      <Styled(div)>
+        <Styled(div)
+          elevation={1}
+        >
+          <Styled(TextField)
+            id="add-tag-input-field"
+            name="add-tag-input-field"
+            onChange={[Function]}
+            placeholder="Add a Tag number"
+            required={false}
+            select={false}
+            type="number"
+            value=""
+            variant="standard"
+          />
+          <Component
+            component="div"
+            loaded={true}
+            loadedClassName="loadedContent"
+            parentClassName="loader"
+          >
+            <Styled(WithStyles(IconButton))
+              aria-label="Search"
+              id="add-tag-input-button"
+              onClick={[Function]}
+              title="Search"
+            >
+              <pure(AddIcon) />
+            </Styled(WithStyles(IconButton))>
+          </Component>
+        </Styled(div)>
+      </Styled(div)>
+    </Boundary>
+  </Styled(WithStyles(Paper))>
+  <Boundary>
+    <Styled(div)>
+      <Styled(div)>
+        <WithStyles(Button)
+          className="detail-panel-manage-rooms-button"
+          color="primary"
+          onClick={[Function]}
+          variant="contained"
+        >
+          <pure(MeetingRoomIcon) />
+           
+          Manage Access
+        </WithStyles(Button)>
+        <WithStyles(Button)
+          className="manage-tags-panel-done-button"
+          color="primary"
+          onClick={[Function]}
+          variant="contained"
+        >
+          <pure(CheckCircleIcon) />
+            Done
+        </WithStyles(Button)>
+      </Styled(div)>
+    </Styled(div)>
+  </Boundary>
+</Styled(div)>
+`;
+
+exports[`<ManageTagsPanel /> renders correctly when not coming from new Visit 1`] = `
+<Styled(div)>
+  <Styled(WithStyles(Paper))>
+    <Boundary>
+      <Styled(div)>
+        <Styled(span)>
+          <Styled(span)>
+            <pure(PersonIcon) />
+            undefined undefined
+          </Styled(span)>
+          <span>
+            <pure(KeyboardArrowRightIcon) />
+          </span>
+          <span>
+            <pure(HotelIcon) />
+             Visit  
+          </span>
+          <Styled(span)>
+            The Future
+          </Styled(span)>
+          <span>
+            <pure(ArrowForwardIcon) />
+          </span>
+          <Styled(span)>
+            The Future
+          </Styled(span)>
+          <span>
+            <pure(KeyboardArrowRightIcon) />
+          </span>
+          <span>
+            <pure(VpnKeyIcon) />
+             Manage Tags
+          </span>
+        </Styled(span)>
+      </Styled(div)>
+    </Boundary>
+    <Boundary>
+      <Styled(div)>
+        <Styled(div)
+          elevation={1}
+        >
+          <Styled(TextField)
+            id="add-tag-input-field"
+            name="add-tag-input-field"
+            onChange={[Function]}
+            placeholder="Add a Tag number"
+            required={false}
+            select={false}
+            type="number"
+            value=""
+            variant="standard"
+          />
+          <Component
+            component="div"
+            loaded={true}
+            loadedClassName="loadedContent"
+            parentClassName="loader"
+          >
+            <Styled(WithStyles(IconButton))
+              aria-label="Search"
+              id="add-tag-input-button"
+              onClick={[Function]}
+              title="Search"
+            >
+              <pure(AddIcon) />
+            </Styled(WithStyles(IconButton))>
+          </Component>
+        </Styled(div)>
+      </Styled(div)>
+    </Boundary>
+  </Styled(WithStyles(Paper))>
+  <Boundary>
+    <Styled(div)>
+      <Styled(div)>
+        <WithStyles(Button)
+          className="detail-panel-manage-rooms-button"
+          color="primary"
+          onClick={[Function]}
+          variant="contained"
+        >
+          <pure(MeetingRoomIcon) />
+           
+          Manage Access
+        </WithStyles(Button)>
+        <WithStyles(Button)
+          className="manage-tags-panel-done-button"
+          color="primary"
+          onClick={[Function]}
+          variant="contained"
+        >
+          <pure(CheckCircleIcon) />
+            Done
+        </WithStyles(Button)>
+      </Styled(div)>
+    </Styled(div)>
+  </Boundary>
+</Styled(div)>
 `;
 
 exports[`<ManageTagsPanel /> renders correctly with no data 1`] = `
-<ManageTagsPanel
-  addTag={[MockFunction]}
-  profiles={
-    ProfileStore {
-      "apiEnded": [Function],
-      "fresh": false,
-      "isFresh": [Function],
-      "url": "https://csi-dev.thecollective.com/ac-api/profile",
-    }
-  }
-  routing={
-    RoutingMock {
-      "breadcrumb": Array [],
-      "getBreadcrumb": [MockFunction],
-      "go": [MockFunction],
-      "goBack": [MockFunction],
-      "goBackToPage": [MockFunction],
-      "goForward": [MockFunction],
-      "goToPage": [MockFunction],
-      "history": Object {},
-      "location": Object {},
-      "push": [MockFunction],
-      "replace": [MockFunction],
-      "splitThings": [MockFunction],
-    }
-  }
-  visits={
-    VisitsMock {
-      "addTag": [Function],
-      "archetypes": Object {
-        "primary": Array [],
-        "secondary": Array [],
-      },
-      "clearErrors": [MockFunction],
-      "detail": Visit {
-        "archetypeIds": Array [],
-        "fromDate": "",
-        "id": "",
-        "lockGroups": Array [],
-        "tags": Array [],
-        "toDate": "",
-      },
-      "getArchetypes": [MockFunction],
-      "item": [Function],
-      "simulateValidationError": [Function],
-      "validationError": undefined,
-    }
-  }
-/>
+<Styled(div)>
+  <Styled(WithStyles(Paper))>
+    <Boundary>
+      <Styled(div)>
+        <Styled(span)>
+          <Styled(span)>
+            <pure(PersonIcon) />
+            undefined undefined
+          </Styled(span)>
+          <span>
+            <pure(KeyboardArrowRightIcon) />
+          </span>
+          <span>
+            <pure(HotelIcon) />
+             Visit  
+          </span>
+          <Styled(span)>
+            The Future
+          </Styled(span)>
+          <span>
+            <pure(ArrowForwardIcon) />
+          </span>
+          <Styled(span)>
+            The Future
+          </Styled(span)>
+          <span>
+            <pure(KeyboardArrowRightIcon) />
+          </span>
+          <span>
+            <pure(VpnKeyIcon) />
+             Manage Tags
+          </span>
+        </Styled(span)>
+      </Styled(div)>
+    </Boundary>
+    <Boundary>
+      <Styled(div)>
+        <Styled(div)
+          elevation={1}
+        >
+          <Styled(TextField)
+            id="add-tag-input-field"
+            name="add-tag-input-field"
+            onChange={[Function]}
+            placeholder="Add a Tag number"
+            required={false}
+            select={false}
+            type="number"
+            value=""
+            variant="standard"
+          />
+          <Component
+            component="div"
+            loaded={true}
+            loadedClassName="loadedContent"
+            parentClassName="loader"
+          >
+            <Styled(WithStyles(IconButton))
+              aria-label="Search"
+              id="add-tag-input-button"
+              onClick={[Function]}
+              title="Search"
+            >
+              <pure(AddIcon) />
+            </Styled(WithStyles(IconButton))>
+          </Component>
+        </Styled(div)>
+      </Styled(div)>
+    </Boundary>
+  </Styled(WithStyles(Paper))>
+  <Boundary>
+    <Styled(div)>
+      <Styled(div)>
+        <WithStyles(Button)
+          className="detail-panel-manage-rooms-button"
+          color="primary"
+          onClick={[Function]}
+          variant="contained"
+        >
+          <pure(MeetingRoomIcon) />
+           
+          Manage Access
+        </WithStyles(Button)>
+        <WithStyles(Button)
+          className="manage-tags-panel-done-button"
+          color="primary"
+          onClick={[Function]}
+          variant="contained"
+        >
+          <pure(CheckCircleIcon) />
+            Done
+        </WithStyles(Button)>
+      </Styled(div)>
+    </Styled(div)>
+  </Boundary>
+</Styled(div)>
 `;
 
 exports[`<ManageTagsPanel /> returns a vaildation error when the tag API returns an error 1`] = `
-<ManageTagsPanel
-  addTag={[MockFunction]}
-  profiles={
-    ProfileStore {
-      "apiEnded": [Function],
-      "fresh": false,
-      "isFresh": [Function],
-      "url": "https://csi-dev.thecollective.com/ac-api/profile",
-    }
-  }
-  routing={
-    RoutingMock {
-      "breadcrumb": Array [],
-      "getBreadcrumb": [MockFunction],
-      "go": [MockFunction],
-      "goBack": [MockFunction],
-      "goBackToPage": [MockFunction],
-      "goForward": [MockFunction],
-      "goToPage": [MockFunction],
-      "history": Object {},
-      "location": Object {},
-      "push": [MockFunction],
-      "replace": [MockFunction],
-      "splitThings": [MockFunction],
-    }
-  }
-  visits={
-    VisitsMock {
-      "addTag": [Function],
-      "archetypes": Object {
-        "primary": Array [],
-        "secondary": Array [],
-      },
-      "clearErrors": [MockFunction],
-      "detail": Visit {
-        "archetypeIds": Array [],
-        "fromDate": "",
-        "id": "",
-        "lockGroups": Array [],
-        "tags": Array [],
-        "toDate": "",
-      },
-      "getArchetypes": [MockFunction],
-      "item": [Function],
-      "simulateValidationError": [Function],
-      "validationError": "this is an error",
-    }
-  }
-/>
+<Styled(div)>
+  <Styled(WithStyles(Paper))>
+    <Boundary>
+      <Styled(div)>
+        <Styled(span)>
+          <Styled(span)>
+            <pure(PersonIcon) />
+            undefined undefined
+          </Styled(span)>
+          <span>
+            <pure(KeyboardArrowRightIcon) />
+          </span>
+          <span>
+            <pure(HotelIcon) />
+             Visit  
+          </span>
+          <Styled(span)>
+            The Future
+          </Styled(span)>
+          <span>
+            <pure(ArrowForwardIcon) />
+          </span>
+          <Styled(span)>
+            The Future
+          </Styled(span)>
+          <span>
+            <pure(KeyboardArrowRightIcon) />
+          </span>
+          <span>
+            <pure(VpnKeyIcon) />
+             Manage Tags
+          </span>
+        </Styled(span)>
+      </Styled(div)>
+    </Boundary>
+    <Boundary>
+      <Styled(div)>
+        <Styled(div)
+          elevation={1}
+        >
+          <Styled(TextField)
+            id="add-tag-input-field"
+            name="add-tag-input-field"
+            onChange={[Function]}
+            placeholder="Add a Tag number"
+            required={false}
+            select={false}
+            type="number"
+            value=""
+            variant="standard"
+          />
+          <Component
+            component="div"
+            loaded={true}
+            loadedClassName="loadedContent"
+            parentClassName="loader"
+          >
+            <Styled(WithStyles(IconButton))
+              aria-label="Search"
+              id="add-tag-input-button"
+              onClick={[Function]}
+              title="Search"
+            >
+              <pure(AddIcon) />
+            </Styled(WithStyles(IconButton))>
+          </Component>
+        </Styled(div)>
+      </Styled(div)>
+    </Boundary>
+  </Styled(WithStyles(Paper))>
+  <Boundary>
+    <Styled(div)>
+      <Styled(div)>
+        <WithStyles(Button)
+          className="detail-panel-manage-rooms-button"
+          color="primary"
+          onClick={[Function]}
+          variant="contained"
+        >
+          <pure(MeetingRoomIcon) />
+           
+          Manage Access
+        </WithStyles(Button)>
+        <WithStyles(Button)
+          className="manage-tags-panel-done-button"
+          color="primary"
+          onClick={[Function]}
+          variant="contained"
+        >
+          <pure(CheckCircleIcon) />
+            Done
+        </WithStyles(Button)>
+      </Styled(div)>
+    </Styled(div)>
+  </Boundary>
+</Styled(div)>
 `;
 
 exports[`<ManageTagsPanel /> shows validation error when adding an invalid tag number 1`] = `
-<ManageTagsPanel
-  addTag={[MockFunction]}
-  profiles={
-    ProfileStore {
-      "apiEnded": [Function],
-      "count": 0,
-      "data": Array [],
-      "detail": Object {},
-      "edit": false,
-      "error": undefined,
-      "fresh": false,
-      "isFresh": [Function],
-      "loading": false,
-      "url": "https://csi-dev.thecollective.com/ac-api/profile",
-    }
-  }
-  routing={
-    RoutingMock {
-      "breadcrumb": Array [],
-      "getBreadcrumb": [MockFunction],
-      "go": [MockFunction],
-      "goBack": [MockFunction],
-      "goBackToPage": [MockFunction],
-      "goForward": [MockFunction],
-      "goToPage": [MockFunction],
-      "history": Object {},
-      "location": Object {},
-      "push": [MockFunction],
-      "replace": [MockFunction],
-      "splitThings": [MockFunction],
-    }
-  }
-  visits={
-    VisitsMock {
-      "addTag": [Function],
-      "archetypes": Object {
-        "primary": Array [],
-        "secondary": Array [],
-      },
-      "clearErrors": [MockFunction] {
-        "calls": Array [
-          Array [],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
-      },
-      "detail": Visit {
-        "archetypeIds": Array [],
-        "fromDate": "",
-        "id": "",
-        "lockGroups": Array [],
-        "tags": Array [],
-        "toDate": "",
-      },
-      "getArchetypes": [MockFunction],
-      "item": [Function],
-      "simulateValidationError": [Function],
-      "validationError": undefined,
-    }
-  }
-/>
+<Styled(div)>
+  <Styled(WithStyles(Paper))>
+    <Boundary>
+      <Styled(div)>
+        <Styled(span)>
+          <Styled(span)>
+            <pure(PersonIcon) />
+            undefined undefined
+          </Styled(span)>
+          <span>
+            <pure(KeyboardArrowRightIcon) />
+          </span>
+          <span>
+            <pure(HotelIcon) />
+             Visit  
+          </span>
+          <Styled(span)>
+            The Future
+          </Styled(span)>
+          <span>
+            <pure(ArrowForwardIcon) />
+          </span>
+          <Styled(span)>
+            The Future
+          </Styled(span)>
+          <span>
+            <pure(KeyboardArrowRightIcon) />
+          </span>
+          <span>
+            <pure(VpnKeyIcon) />
+             Manage Tags
+          </span>
+        </Styled(span)>
+      </Styled(div)>
+    </Boundary>
+    <Boundary>
+      <Styled(div)>
+        <Styled(div)
+          elevation={1}
+        >
+          <Styled(WithStyles(IconButton))
+            aria-label="Clear"
+            id="add-tag-input-clear"
+            onClick={[Function]}
+            title="Clear Search"
+          >
+            <pure(CloseIcon) />
+          </Styled(WithStyles(IconButton))>
+          <Styled(TextField)
+            error="Tag numbers should be at least 6 digits"
+            helperText="Tag numbers should be at least 6 digits"
+            id="add-tag-input-field"
+            name="add-tag-input-field"
+            onChange={[Function]}
+            placeholder="Add a Tag number"
+            required={false}
+            select={false}
+            type="number"
+            value="123"
+            variant="standard"
+          />
+          <Component
+            component="div"
+            loaded={true}
+            loadedClassName="loadedContent"
+            parentClassName="loader"
+          >
+            <Styled(WithStyles(IconButton))
+              aria-label="Search"
+              id="add-tag-input-button"
+              onClick={[Function]}
+              title="Search"
+            >
+              <pure(AddIcon) />
+            </Styled(WithStyles(IconButton))>
+          </Component>
+        </Styled(div)>
+      </Styled(div)>
+    </Boundary>
+  </Styled(WithStyles(Paper))>
+  <Boundary>
+    <Styled(div)>
+      <Styled(div)>
+        <WithStyles(Button)
+          className="detail-panel-manage-rooms-button"
+          color="primary"
+          onClick={[Function]}
+          variant="contained"
+        >
+          <pure(MeetingRoomIcon) />
+           
+          Manage Access
+        </WithStyles(Button)>
+        <WithStyles(Button)
+          className="manage-tags-panel-done-button"
+          color="primary"
+          onClick={[Function]}
+          variant="contained"
+        >
+          <pure(CheckCircleIcon) />
+            Done
+        </WithStyles(Button)>
+      </Styled(div)>
+    </Styled(div)>
+  </Boundary>
+</Styled(div)>
 `;

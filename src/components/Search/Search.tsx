@@ -6,48 +6,48 @@ import { Boundary } from '../ErrorBoundary'
 import { Container, Input, Action } from './Components'
 
 export interface SearchProps {
-	onChange: (e: any, value?: string) => void
-	placeholder?: string
+    onChange: (e: any, value?: string) => void
+    placeholder?: string
 }
 
 export interface SearchState {
-	value: string
+    value: string
 }
 
 export class Search extends React.Component<SearchProps, SearchState> {
-	constructor(props: SearchProps) {
-		super(props)
-	}
 
-	state: SearchState = { value: '' }
+    public state: SearchState = { value: '' }
+    constructor(props: SearchProps) {
+        super(props)
+    }
 
-	clearSelection = () => {
-		const { onChange } = this.props
-		this.setState({ value: '' }, () => onChange({ target: { value: '' } }))
-	}
+    public clearSelection = () => {
+        const { onChange } = this.props
+        this.setState({ value: '' }, () => onChange({ target: { value: '' } }))
+    }
 
-	render() {
-		const { placeholder, onChange } = this.props
-		const { value } = this.state
-		return (
-			<Boundary>
-				<Container elevation={1}>
-					{value && (
-						<Action aria-label="Clear" onClick={this.clearSelection} title="Clear Search">
-							<CloseIcon />
-						</Action>
-					)}
-					<Input
-						placeholder={placeholder || 'Search: name, company, access, key number'}
-						onChange={(e: any) => this.setState({ value: e.target.value })}
-						value={value}
-					/>
+    public render() {
+        const { placeholder, onChange } = this.props
+        const { value } = this.state
+        return (
+            <Boundary>
+                <Container elevation={1}>
+                    {value && (
+                        <Action aria-label="Clear" onClick={this.clearSelection} title="Clear Search">
+                            <CloseIcon />
+                        </Action>
+                    )}
+                    <Input
+                        placeholder={placeholder || 'Search: name, company, access, key number'}
+                        onChange={(e: any) => this.setState({ value: e.target.value })}
+                        value={value}
+                    />
 
-					<Action aria-label="Search" onClick={(e: any) => onChange(e, value)} title="Search">
-						<SearchIcon />
-					</Action>
-				</Container>
-			</Boundary>
-		)
-	}
+                    <Action aria-label="Search" onClick={(e: any) => onChange(e, value)} title="Search">
+                        <SearchIcon />
+                    </Action>
+                </Container>
+            </Boundary>
+        )
+    }
 }

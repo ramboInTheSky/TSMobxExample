@@ -1,24 +1,24 @@
 export class LockGroup{
+    public id: string = ''
+    public name: string = ''
+    public type: string = ''
+    public notes: string = ''
+    public selected: boolean = false
     constructor(id?: string, name?: string, type?: string){
         this.id = id || ''
         this.name = name || ''
         this.type = type || 'Room'
     }
-    id: string = ''
-    name: string = ''
-    type: string = ''
-    notes: string = ''
-    selected: boolean = false
 }
 
 export class CreateLockGroup{
-    name: string = ''
-    type: string = ''
-    notes: string = ''
+    public name: string = ''
+    public type: string = ''
+    public notes: string = ''
 }
 
 export interface LockGroupResponse {
-	count: number
-	filters: Array<string>
-	items: Array<LockGroup>
+    count: number
+    filters: string[]
+    items: LockGroup[]
 }

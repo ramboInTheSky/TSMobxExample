@@ -11,27 +11,27 @@ export * from './Visits'
 export * from './LockGroups'
 
 export interface Stores {
-	profiles: ProfileStore
-	routing: Routing
-	visits: VisitStore
-	lockGroups: LockGroupStore
+    profiles: ProfileStore
+    routing: Routing
+    visits: VisitStore
+    lockGroups: LockGroupStore
 }
 
 type StoreNamesGuard = keyof Stores
 
 export class StoreNames {
-	static profiles: StoreNamesGuard = 'profiles'
-	static routing: StoreNamesGuard = 'routing'
-	static visits: StoreNamesGuard = 'visits'
-	static lockGroups: StoreNamesGuard = 'lockGroups'
+    public static profiles: StoreNamesGuard = 'profiles'
+    public static routing: StoreNamesGuard = 'routing'
+    public static visits: StoreNamesGuard = 'visits'
+    public static lockGroups: StoreNamesGuard = 'lockGroups'
 }
 
 const localStores: Partial<Stores> = {
-	profiles: new ProfileStore(),
-	routing: new Routing(),
-	visits: new VisitStore(),
-	lockGroups: new LockGroupStore(),
+    profiles: new ProfileStore(),
+    routing: new Routing(),
+    visits: new VisitStore(),
+    lockGroups: new LockGroupStore(),
 }
 
-//test comment
+// test comment
 export const stores = { ...localStores }

@@ -2,14 +2,12 @@ import React from 'react'
 import { inject, observer } from 'mobx-react'
 import Loader from 'react-loader'
 import PersonIcon from '@material-ui/icons/Person'
-import { Button, TextField } from '@material-ui/core'
-import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft'
+import { Button } from '@material-ui/core'
 import MeetingRoomIcon from '@material-ui/icons/MeetingRoom'
 import CheckCircleIcon from '@material-ui/icons/CheckCircle'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
 import HotelIcon from '@material-ui/icons/Hotel'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
-import CloseIcon from '@material-ui/icons/Close'
 import AddIcon from '@material-ui/icons/Add'
 
 import { Routing, StoreNames, ProfileStore, LockGroupStore, VisitStore } from '../../stores'
@@ -20,11 +18,8 @@ import {
     ProfileName,
     Container,
     Title,
-    Action,
     ActionsBar,
     ButtonsContainer,
-    InputContainer,
-    Input,
     VisitDateFrom,
     VisitDateTo,
     RoomsContainer,
@@ -47,8 +42,8 @@ export interface ManageCustomAccessConnectedProps extends ManageCustomAccessProp
 @inject(StoreNames.profiles, StoreNames.routing, StoreNames.visits, StoreNames.lockGroups)
 @observer
 export class ManageCustomAccessPanel extends React.Component<ManageCustomAccessProps>{
-    gridApi: any
-    colDef = [
+    public gridApi: any
+    public colDef = [
         {
             headerName: 'Name',
             field: 'name',
@@ -90,22 +85,22 @@ export class ManageCustomAccessPanel extends React.Component<ManageCustomAccessP
         
     }
 
-    done = () => {
+    public done = () => {
         this.store.routing.goToPage(`/profile/${this.store.profiles.item.id}/visit/${this.store.visits.item.id}`)
     }
 
-    addAccess = async (e: any, id: string)=>{
+    public addAccess = async (e: any, id: string)=>{
         this.props.addAccessFn(e, id)
         this.gridApi.refreshCells({
             force: true
         })
     }
 
-    getGridApi = (gridApi: any)=>{
+    public getGridApi = (gridApi: any)=>{
         this.gridApi = gridApi
     }
 
-    render() {
+    public render() {
         
         const { item: visit } = this.store.visits
         const { item: profile } = this.store.profiles
@@ -145,8 +140,8 @@ export class ManageCustomAccessPanel extends React.Component<ManageCustomAccessP
                             columnDefs={this.colDef}
                             rowData={this.store.lockGroups.items}
                             returnApi={this.getGridApi}
-                            showQuickFilter
-                            small
+                            showQuickFilter={true}
+                            small={true}
                         />
                     </Loader>
                 </Boundary>
@@ -176,7 +171,7 @@ export class ManageCustomAccessPanel extends React.Component<ManageCustomAccessP
                                 onClick={this.done}
                             >
                                 <CheckCircleIcon />&nbsp; Done
-							</Button>
+                            </Button>
                         </ButtonsContainer>
                     </ActionsBar>
                 </Boundary>

@@ -1,5 +1,4 @@
 import React from 'react'
-import Loader from 'react-loader'
 import { ProfileStore } from '../../stores/Profiles'
 import { Routing, StoreNames } from '../../stores'
 import { VisitStore } from '../../stores/Visits'
@@ -29,12 +28,12 @@ export class ManageTags extends React.Component<ManageTagsProps> {
     get store() {
         return this.props as ManageTagsConnectedProps
     }
-    lastUsedTag?: string = undefined
+    public lastUsedTag?: string = undefined
     constructor(props: ManageTagsProps) {
         super(props)
     }
 
-    componentDidMount() {
+    public componentDidMount() {
         if (!this.store.profiles.item.id) {
             this.store.profiles.getDetail(this.props.match.params.profileId)
         }
@@ -43,16 +42,16 @@ export class ManageTags extends React.Component<ManageTagsProps> {
         // }
     }
 
-    save = async (data: Tag) => {
+    public save = async (data: Tag) => {
         await this.store.visits.addTag(data, this.props.match.params.profileId, this.props.match.params.visitId)
     }
     
-    addTag = async (tag: Tag)=>{
+    public addTag = async (tag: Tag)=>{
         return await this.store.visits.addTag(tag, this.store.profiles.item.id!, this.store.visits.item.id)
     }
 
-    render() {
-        const { isError, isLoading, errorMessage } = this.store.visits
+    public render() {
+        const { isError, errorMessage } = this.store.visits
         if (isError) return <ErrorMessage>{errorMessage}</ErrorMessage>
         return (
             <Layout>

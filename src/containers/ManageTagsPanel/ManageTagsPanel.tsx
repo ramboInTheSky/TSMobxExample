@@ -2,10 +2,8 @@ import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react'
 import Loader from 'react-loader'
 
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import PersonIcon from '@material-ui/icons/Person'
-import { Button, TextField } from '@material-ui/core'
-import KeyboardArrowLeftIcon from '@material-ui/icons/KeyboardArrowLeft'
+import { Button } from '@material-ui/core'
 import VpnKeyIcon from '@material-ui/icons/VpnKey'
 import CheckCircleIcon from '@material-ui/icons/CheckCircle'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
@@ -69,11 +67,11 @@ export class ManageTagsPanel extends Component<ManageTagsPanelProps, ManageTagsP
         }
     }
 
-    done = () => {
+    public done = () => {
         this.store.routing.goToPage(`/profile/${this.store.profiles.item.id}/visit/${this.store.visits.item.id}`)
     }
 
-    addTag = async () => {
+    public addTag = async () => {
         const { currentTag } = this.state
         if (currentTag && currentTag.length > 6) {
             const tag = new Tag(currentTag)
@@ -87,16 +85,16 @@ export class ManageTagsPanel extends Component<ManageTagsPanelProps, ManageTagsP
         }
     }
 
-    handleChange = (e: any) => {
+    public handleChange = (e: any) => {
         if (e) e.preventDefault()
         this.setState({ currentTag: e.target.value, validation: { currentTag: undefined } }, () => this.store.visits.clearErrors())
     }
 
-    clearSelection = () => {
+    public clearSelection = () => {
         this.setState({ currentTag: undefined, validation: { currentTag: undefined } }, () => this.store.visits.clearErrors())
     }
 
-    render() {
+    public render() {
         const { item: visit, isValidationError, validationError, isLoading } = this.store.visits
         const { item: profile } = this.store.profiles
         const { currentTag, validation } = this.state
@@ -184,7 +182,7 @@ export class ManageTagsPanel extends Component<ManageTagsPanelProps, ManageTagsP
                                 onClick={this.done}
                             >
                                 <CheckCircleIcon />&nbsp; Done
-							</Button>
+                            </Button>
                         </ButtonsContainer>
                     </ActionsBar>
                 </Boundary>

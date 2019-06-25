@@ -1,9 +1,8 @@
 import { LockGroup } from '../../models/LockGroups';
 
 export class LockGroupMock {
-    detail: LockGroup = new LockGroup()
-    item = () => this.detail
-    data = [
+    public detail: LockGroup = new LockGroup()
+    public data = [
         {
             "id": "123-123-123-123",
             "name": "1.11",
@@ -47,6 +46,7 @@ export class LockGroupMock {
             "notes": "this is an unlucky room"
         }
     ]
-    getList = jest.fn()
-    items = []
+    public getList = jest.fn()
+    public items = []
+    public item = () => this.detail
 }

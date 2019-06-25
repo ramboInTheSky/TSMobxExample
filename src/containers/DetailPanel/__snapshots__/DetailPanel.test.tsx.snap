@@ -1,273 +1,131 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<DetailPanel /> correctly goes back to non-edit mode 1`] = `
-<DetailPanel
-  callback={[MockFunction]}
-  profiles={
-    ProfileStore {
-      "apiEnded": [Function],
-      "count": 0,
-      "data": Array [],
-      "detail": Object {},
-      "edit": true,
-      "error": undefined,
-      "fresh": false,
-      "isFresh": [Function],
-      "loading": false,
-      "url": "https://csi-dev.thecollective.com/ac-api/profile",
-    }
-  }
-  routing={
-    RoutingMock {
-      "breadcrumb": Array [],
-      "getBreadcrumb": [MockFunction],
-      "go": [MockFunction],
-      "goBack": [MockFunction],
-      "goBackToPage": [MockFunction],
-      "goForward": [MockFunction],
-      "goToPage": [MockFunction] {
-        "calls": Array [
-          Array [
-            "/",
-          ],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
-      },
-      "history": Object {},
-      "location": Object {},
-      "push": [MockFunction],
-      "replace": [MockFunction],
-      "splitThings": [MockFunction],
-    }
-  }
-  visits={
-    VisitsMock {
-      "addTag": [Function],
-      "archetypes": Object {
-        "primary": Array [],
-        "secondary": Array [],
-      },
-      "clearErrors": [MockFunction],
-      "detail": Visit {
-        "archetypeIds": Array [],
-        "fromDate": "",
-        "id": "",
-        "lockGroups": Array [],
-        "tags": Array [],
-        "toDate": "",
-      },
-      "getArchetypes": [MockFunction],
-      "item": [Function],
-      "simulateValidationError": [Function],
-      "validationError": undefined,
-    }
-  }
-/>
-`;
-
 exports[`<DetailPanel /> renders correctly with data 1`] = `
-<DetailPanel
-  callback={[MockFunction]}
-  data={
-    Object {
-      "company": "Wayne Enterprises",
-      "created": "2014-03-25T12:00:00Z",
-      "emailAddress": "info@waine-enterprises.com",
-      "firstName": "Bruce",
-      "lastName": "Wayne",
-      "lockGroups": Array [
-        "Default",
-        "Boiler",
-        "1.11",
-      ],
-      "mobileNumber": "555-123-123",
-      "notes": "Gotham is safe",
-      "profileId": "wert34-324c523-2c356-c34c523-4c23456v23",
-      "type": undefined,
-      "visits": Array [
-        Object {
-          "from": "2015-03-25T12:00:00Z",
-          "id": "q3w4c5-w34cr-w34cw34-5cw3-4cw345-3cw34t",
-          "tags": Array [
-            "123123",
-            "234234",
-            "345345",
-          ],
-          "to": "2015-03-25T12:00:00Z",
-        },
-        Object {
-          "from": "20190401T10:00:10.000Z",
-          "id": "vvv4c5-w34cr-w34cw34-5cbb-4cw345-3cw311",
-          "tags": Array [
-            "123123",
-            "234234",
-            "345345",
-          ],
-          "to": "20190501T10:00:10.000Z",
-        },
-      ],
-    }
-  }
-  profiles={
-    ProfileStore {
-      "apiEnded": [Function],
-      "fresh": false,
-      "isFresh": [Function],
-      "url": "https://csi-dev.thecollective.com/ac-api/profile",
-    }
-  }
-  routing={
-    RoutingMock {
-      "breadcrumb": Array [],
-      "getBreadcrumb": [MockFunction],
-      "go": [MockFunction],
-      "goBack": [MockFunction],
-      "goBackToPage": [MockFunction],
-      "goForward": [MockFunction],
-      "goToPage": [MockFunction],
-      "history": Object {},
-      "location": Object {},
-      "push": [MockFunction],
-      "replace": [MockFunction],
-      "splitThings": [MockFunction],
-    }
-  }
-  visits={
-    VisitsMock {
-      "addTag": [Function],
-      "archetypes": Object {
-        "primary": Array [],
-        "secondary": Array [],
-      },
-      "clearErrors": [MockFunction],
-      "detail": Visit {
-        "archetypeIds": Array [],
-        "fromDate": "",
-        "id": "",
-        "lockGroups": Array [],
-        "tags": Array [],
-        "toDate": "",
-      },
-      "getArchetypes": [MockFunction],
-      "item": [Function],
-      "simulateValidationError": [Function],
-      "validationError": undefined,
-    }
-  }
-/>
+<Boundary>
+  <Styled(WithStyles(Paper))>
+    <Styled(div)>
+      <pure(PersonIcon) />
+      Profile
+    </Styled(div)>
+    <Styled(div)>
+      <CSSTransitionGroup
+        transitionAppear={true}
+        transitionAppearTimeout={200}
+        transitionEnter={true}
+        transitionEnterTimeout={200}
+        transitionLeave={true}
+        transitionLeaveTimeout={200}
+        transitionName="fade"
+      >
+        <Styled(div)>
+          undefined undefined
+        </Styled(div)>
+        <Styled(div)
+          key="company"
+        />
+        <Styled(div)
+          key="mobileNumber"
+        />
+        <Styled(div)
+          key="emailAddress"
+        />
+      </CSSTransitionGroup>
+    </Styled(div)>
+    <Styled(div)>
+      <WithStyles(Button)
+        onClick={[Function]}
+        variant="contained"
+      >
+        <pure(KeyboardArrowLeftIcon) />
+         Back
+      </WithStyles(Button)>
+      <Styled(div)>
+        <WithStyles(Button)
+          className="detail-panel-edit-button"
+          color="primary"
+          onClick={[Function]}
+          variant="contained"
+        >
+          <pure(EditIcon) />
+           Edit
+        </WithStyles(Button)>
+        <WithStyles(Button)
+          className="detail-panel-add-visit-button"
+          color="primary"
+          onClick={[Function]}
+          variant="contained"
+        >
+          <pure(HotelIcon) />
+           
+          Add Visit
+        </WithStyles(Button)>
+      </Styled(div)>
+    </Styled(div)>
+  </Styled(WithStyles(Paper))>
+</Boundary>
 `;
 
 exports[`<DetailPanel /> renders correctly with no data 1`] = `
-<DetailPanel
-  callback={[MockFunction]}
-  profiles={
-    ProfileStore {
-      "apiEnded": [Function],
-      "fresh": false,
-      "isFresh": [Function],
-      "url": "https://csi-dev.thecollective.com/ac-api/profile",
-    }
-  }
-  routing={
-    RoutingMock {
-      "breadcrumb": Array [],
-      "getBreadcrumb": [MockFunction],
-      "go": [MockFunction],
-      "goBack": [MockFunction],
-      "goBackToPage": [MockFunction],
-      "goForward": [MockFunction],
-      "goToPage": [MockFunction],
-      "history": Object {},
-      "location": Object {},
-      "push": [MockFunction],
-      "replace": [MockFunction],
-      "splitThings": [MockFunction],
-    }
-  }
-  visits={
-    VisitsMock {
-      "addTag": [Function],
-      "archetypes": Object {
-        "primary": Array [],
-        "secondary": Array [],
-      },
-      "clearErrors": [MockFunction],
-      "detail": Visit {
-        "archetypeIds": Array [],
-        "fromDate": "",
-        "id": "",
-        "lockGroups": Array [],
-        "tags": Array [],
-        "toDate": "",
-      },
-      "getArchetypes": [MockFunction],
-      "item": [Function],
-      "simulateValidationError": [Function],
-      "validationError": undefined,
-    }
-  }
-/>
-`;
-
-exports[`<DetailPanel /> sets edit mode on edit click and display correctly 1`] = `
-<DetailPanel
-  callback={[MockFunction]}
-  profiles={
-    ProfileStore {
-      "apiEnded": [Function],
-      "count": 0,
-      "data": Array [],
-      "detail": Object {},
-      "edit": true,
-      "error": undefined,
-      "fresh": false,
-      "isFresh": [Function],
-      "loading": false,
-      "url": "https://csi-dev.thecollective.com/ac-api/profile",
-    }
-  }
-  routing={
-    RoutingMock {
-      "breadcrumb": Array [],
-      "getBreadcrumb": [MockFunction],
-      "go": [MockFunction],
-      "goBack": [MockFunction],
-      "goBackToPage": [MockFunction],
-      "goForward": [MockFunction],
-      "goToPage": [MockFunction],
-      "history": Object {},
-      "location": Object {},
-      "push": [MockFunction],
-      "replace": [MockFunction],
-      "splitThings": [MockFunction],
-    }
-  }
-  visits={
-    VisitsMock {
-      "addTag": [Function],
-      "archetypes": Object {
-        "primary": Array [],
-        "secondary": Array [],
-      },
-      "clearErrors": [MockFunction],
-      "detail": Visit {
-        "archetypeIds": Array [],
-        "fromDate": "",
-        "id": "",
-        "lockGroups": Array [],
-        "tags": Array [],
-        "toDate": "",
-      },
-      "getArchetypes": [MockFunction],
-      "item": [Function],
-      "simulateValidationError": [Function],
-      "validationError": undefined,
-    }
-  }
-/>
+<Boundary>
+  <Styled(WithStyles(Paper))>
+    <Styled(div)>
+      <pure(PersonIcon) />
+      Profile
+    </Styled(div)>
+    <Styled(div)>
+      <CSSTransitionGroup
+        transitionAppear={true}
+        transitionAppearTimeout={200}
+        transitionEnter={true}
+        transitionEnterTimeout={200}
+        transitionLeave={true}
+        transitionLeaveTimeout={200}
+        transitionName="fade"
+      >
+        <Styled(div)>
+          undefined undefined
+        </Styled(div)>
+        <Styled(div)
+          key="company"
+        />
+        <Styled(div)
+          key="mobileNumber"
+        />
+        <Styled(div)
+          key="emailAddress"
+        />
+      </CSSTransitionGroup>
+    </Styled(div)>
+    <Styled(div)>
+      <WithStyles(Button)
+        onClick={[Function]}
+        variant="contained"
+      >
+        <pure(KeyboardArrowLeftIcon) />
+         Back
+      </WithStyles(Button)>
+      <Styled(div)>
+        <WithStyles(Button)
+          className="detail-panel-edit-button"
+          color="primary"
+          onClick={[Function]}
+          variant="contained"
+        >
+          <pure(EditIcon) />
+           Edit
+        </WithStyles(Button)>
+        <WithStyles(Button)
+          className="detail-panel-add-visit-button"
+          color="primary"
+          onClick={[Function]}
+          variant="contained"
+        >
+          <pure(HotelIcon) />
+           
+          Add Visit
+        </WithStyles(Button)>
+      </Styled(div)>
+    </Styled(div)>
+  </Styled(WithStyles(Paper))>
+</Boundary>
 `;

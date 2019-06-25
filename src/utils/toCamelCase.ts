@@ -10,7 +10,7 @@ export const toCamelCase: any = (obj: any) => {
             rtn = null
         } else {
             rtn = {}
-            for (let key in obj) {
+            for (const key in obj) {
                 if (obj.hasOwnProperty(key)) {
                     const newKey = key.replace(/(_\w)/g, k => k[1].toUpperCase())
                     rtn[newKey] = toCamelCase(obj[key])

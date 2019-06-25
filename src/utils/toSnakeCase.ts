@@ -11,7 +11,7 @@ export const toSnakeCase: any = (obj: any) => {
         }
         else {
             rtn = {}
-            for (let key in obj) {
+            for (const key in obj) {
                 if (obj.hasOwnProperty(key)) {
                     const newKey = key.replace(/\W+/g, '_').replace(/([a-z\d])([A-Z])/g, '$1_$2').toLowerCase()
                     rtn[newKey] = obj[key] === '' && obj[key].trim() === '' ? null : toSnakeCase(obj[key])

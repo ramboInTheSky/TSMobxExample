@@ -1,8 +1,18 @@
 {
 	"compilerOptions": {
 		"target": "es5",
-		"lib": ["dom", "dom.iterable", "esnext", "es5", "es2015", "es2017"],
-		"types": ["jest", "node"],
+		"lib": [
+			"dom",
+			"dom.iterable",
+			"esnext",
+			"es5",
+			"es2015",
+			"es2017"
+		],
+		"types": [
+			"jest",
+			"node"
+		],
 		"outDir": "build/dist",
 		"sourceMap": true,
 		"rootDir": "src",
@@ -22,18 +32,30 @@
 		"noEmit": true,
 		"jsx": "preserve",
 		"noImplicitAny": true,
-		"noImplicitThis": true,
+		"noImplicitThis": false,
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": false,
 		"allowUnreachableCode": false,
 		"noUnusedParameters": false,
-		"noUnusedLocals": false,
+		"noUnusedLocals": true,
 		"removeComments": true,
 		"strictNullChecks": true,
 		"alwaysStrict": true,
 		"experimentalDecorators": true,
-		"noLib": false
+		"noLib": false,
+		"downlevelIteration": true
 	},
-	"include": ["src"],
-	"exclude": ["node_modules", "static", "dist"]
+	"include": [
+		"src"
+	],
+	"exclude": [
+		"node_modules",
+		"static",
+		"dist"
+	],
+	"plugins": [
+		{
+			"transform": "ts-optchain/transform"
+		}
+	]
 }

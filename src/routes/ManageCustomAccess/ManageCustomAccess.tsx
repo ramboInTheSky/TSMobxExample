@@ -34,7 +34,7 @@ export class ManageCustomAccess extends React.Component<ManageCustomAccessProps>
         super(props)
     }
 
-    componentDidMount() {
+    public componentDidMount() {
         if (!this.store.lockGroups.items.length) {
             this.store.lockGroups.getList()
         }
@@ -46,7 +46,7 @@ export class ManageCustomAccess extends React.Component<ManageCustomAccessProps>
         // }
     }
 
-    addAccess = async (e: any, id: string) => {
+    public addAccess = async (e: any, id: string) => {
         e.preventDefault()
         console.log(id)
         const lockGroup = this.store.lockGroups.items.find(item => item.id === id)
@@ -59,7 +59,7 @@ export class ManageCustomAccess extends React.Component<ManageCustomAccessProps>
         }
     }
 
-    render() {
+    public render() {
         if (this.store.visits.isError || this.store.lockGroups.isError) return <ErrorMessage>{this.store.visits.errorMessage || this.store.lockGroups.errorMessage}</ErrorMessage>
         return (
             <Layout>

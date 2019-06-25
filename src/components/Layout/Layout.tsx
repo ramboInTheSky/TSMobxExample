@@ -7,16 +7,16 @@ import { Wrapper, Heading, Content } from './Components'
 import { Breadcrumb } from '../'
 
 export interface LayoutProps {
-	children?: any
+    children?: any
 }
 
 export const Layout = (props: LayoutProps) => 
-	<Boundary>
-		<Wrapper>
-			<Heading>
-				<Header />
-				<Breadcrumb />
-			</Heading>
-			<Content>{props.children}</Content>
-		</Wrapper>
-	</Boundary>
+    <Boundary>
+        <Wrapper>
+            <Heading>
+                <Header />
+                <Breadcrumb />
+            </Heading>
+            <Content>{props.children}</Content>
+        </Wrapper>
+    </Boundary>

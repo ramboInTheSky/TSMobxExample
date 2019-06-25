@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 import { variables } from '../../constants/theme';
 import Paper from '@material-ui/core/Paper'
-import InputBase from '@material-ui/core/InputBase'
 import IconButton from '@material-ui/core/IconButton'
 import TextField from '@material-ui/core/TextField'
 

@@ -1,5 +1,4 @@
 import styled from '@emotion/styled'
-import Paper from '@material-ui/core/Paper'
 import { variables } from '../../constants/theme'
 
 export const Wrapper = styled.div`

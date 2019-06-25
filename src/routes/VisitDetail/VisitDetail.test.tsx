@@ -1,6 +1,5 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
-import { createShallow, createMount } from '@material-ui/core/test-utils'
+import { shallow } from 'enzyme'
 
 import { VisitDetail } from '.'
 import { RoutingMock, ProfilesMock } from '../../stores/mock';
@@ -8,8 +7,7 @@ import { VisitsMock } from '../../stores/mock/VisitsMock';
 
 describe('<VisitDetail />', () => {
 	let props: any
-	let shallowMaterial: any
-	let mountMaterial: any
+	const Component = (VisitDetail as any).wrappedComponent
 	beforeEach(() => {
 		props = {
 			match: {
@@ -21,12 +19,10 @@ describe('<VisitDetail />', () => {
             routing: new RoutingMock(),
             visits: new VisitsMock()
 		}
-		shallowMaterial = createShallow()
-		mountMaterial = createMount()
 	})
 
 	it('renders correctly', () => {
-		expect(shallow(<VisitDetail {...props} />)).toMatchSnapshot()
+		expect(shallow(<Component {...props} />)).toMatchSnapshot()
 	})
 
 	it('renders correctly when NEW Profile', () => {
@@ -35,23 +31,23 @@ describe('<VisitDetail />', () => {
 				profileId: 'new',
 			},
 		}
-		expect(shallow(<VisitDetail {...props} match={match}/>)).toMatchSnapshot()
+		expect(shallow(<Component {...props} match={match}/>)).toMatchSnapshot()
 	})
 
 	it('calls the api correctly', () => {
-		const el = mountMaterial(<VisitDetail {...props} />)
+		const el = shallow(<Component {...props} />)
 		expect(props.visits.getArchetypes).toHaveBeenCalled()
 	})
 
 	it('renders correctly when data is loading', () => {
-		const el = shallow(<VisitDetail {...props} profiles={{ ...props.profiles, isLoading: true }} />)
+		const el = shallow(<Component {...props} profiles={{ ...props.profiles, isLoading: true }} />)
 		expect(el).toMatchSnapshot()
 	})
 
 	it('handles API errors', () => {
 		props.profiles.isError = true
 		props.profiles.errorMessage = 'yeah'
-		const el = shallow(<VisitDetail {...props}  />)
+		const el = shallow(<Component {...props}  />)
 		expect(el).toMatchSnapshot()
 	})
 

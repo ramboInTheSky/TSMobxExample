@@ -2,9 +2,9 @@
 
 exports[`<urls /> renders correctly 1`] = `
 Object {
-  "archetypes": "https://csi-dev.thecollective.com/ac-api/archetype",
-  "lockGroups": "https://csi-dev.thecollective.com/ac-api/lockgroup",
-  "profiles": "https://csi-dev.thecollective.com/ac-api/profile",
+  "archetypes": "/archetypes.json",
+  "lockGroups": "get_lock_groups.json",
+  "profiles": "/profiles.json",
   "visits": "https://csi-dev.thecollective.com/ac-api/visit",
 }
 `;

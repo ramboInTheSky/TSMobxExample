@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { Paper, IconButton } from '@material-ui/core'
+import { Paper } from '@material-ui/core'
 
 import { variables } from '../../constants/theme'
 

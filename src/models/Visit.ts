@@ -1,29 +1,29 @@
 import { LockGroup } from './LockGroups'
 export class Visit {
-    id: string = ''
-    lockGroups?: Array<LockGroup | string>  = []
-    fromDate: string = ''
-    toDate: string = ''
-    tags: Array<string> = []
-    archetypeIds: Array<string> = []
+    public id: string = ''
+    public lockGroups?: Array<LockGroup | string>  = []
+    public fromDate: string = ''
+    public toDate: string = ''
+    public tags: string[] = []
+    public archetypeIds: string[] = []
 }
 
 export class CreateVisit {
-    lockGroups?: Array<LockGroup> = []
-    fromDate: string = ''
-    toDate: string = ''
-    tags: Array<string> = []
-    archetypeIds: Array<string> = []
+    public lockGroups?: LockGroup[] = []
+    public fromDate: string = ''
+    public toDate: string = ''
+    public tags: string[] = []
+    public archetypeIds: string[] = []
 }
 
 export interface Archetype {
     id: string
     name: string
     primary: boolean
-    lockGroupNames: Array<string>
+    lockGroupNames: string[]
 }
 
 export class Archetypes {
-    primary: Array<Archetype> = []
-    secondary: Array<Archetype> = []
+    public primary: Archetype[] = []
+    public secondary: Archetype[] = []
 }

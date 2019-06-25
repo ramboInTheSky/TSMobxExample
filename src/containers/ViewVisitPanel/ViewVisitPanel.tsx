@@ -52,7 +52,7 @@ export class ViewVisitPanel extends Component<ViewVisitPanelProps> {
     }
 
 
-    render() {
+    public render() {
         const { archetypes } = this.store.visits
         const { item: profile } = this.store.profiles
         const { item: visit } = this.store.visits
@@ -118,7 +118,7 @@ export class ViewVisitPanel extends Component<ViewVisitPanelProps> {
                         <ActionsBar>
                             <Button variant="contained" onClick={() => this.store.routing.goToPage(`/profile/${this.store.profiles.item.id}`)}>
                                 <KeyboardArrowLeftIcon />&nbsp;Back
-						</Button>
+                        </Button>
                             <ButtonsContainer>
 
                                 {/* <Button

@@ -13,7 +13,7 @@
     "@types/axios": "^0.14.0",
     "@types/enzyme": "^3.9.1",
     "@types/enzyme-adapter-react-16": "^1.0.5",
-    "@types/jest": "24.0.11",
+    "@types/jest": "^24.0.15",
     "@types/lodash": "^4.14.123",
     "@types/moment": "^2.13.0",
     "@types/node": "11.12.2",
@@ -52,7 +52,7 @@
     "fs-extra": "7.0.1",
     "html-webpack-plugin": "4.0.0-alpha.2",
     "identity-obj-proxy": "3.0.0",
-    "jest": "^24.7.1",
+    "jest": "^24.8.0",
     "jest-pnp-resolver": "1.0.2",
     "jest-resolve": "23.6.0",
     "jest-watch-typeahead": "^0.2.1",
@@ -82,7 +82,10 @@
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "1.2.2",
-    "tslint": "^5.16.0",
+    "tslint": "^5.18.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.0.0",
     "typescript": "3.4.1",
     "url-loader": "1.1.2",
     "validator": "^10.11.0",
@@ -94,7 +97,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "test:ci": "CI=true node scripts/test.js",
+    "lint": "tslint --project ."
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -159,5 +164,13 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "husky": "^2.4.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test:ci && npm version patch && git add *.json"
+    }
   }
 }

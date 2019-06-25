@@ -1,146 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<ProfileDetail /> handles API errors 1`] = `
-<ProfileDetail
-  match={
-    Object {
-      "params": Object {
-        "profileId": "123",
-      },
-    }
-  }
-  profiles={
-    Object {
-      "getDetail": [MockFunction],
-      "getList": [MockFunction],
-      "isError": true,
-      "isLoading": false,
-      "item": Object {
-        "company": "test 123",
-        "created": "2019-04-16T12:03:37.493156",
-        "emailAddress": "dsg@dsf.com",
-        "firstName": "Clark",
-        "id": "1aa657bc-d556-4643-a68f-af46f1bdba89",
-        "lastName": "Kent",
-        "mobileNumber": "01234567890",
-        "notes": "fdsdfsfs",
-        "visits": Array [
-          Object {
-            "archetypeIds": Array [],
-            "fromDate": "2015-03-23T11:00:00Z",
-            "id": "d3aa88e2-c754-41e0-8ba6-4198a34aa0a2",
-            "lockGroups": Array [
-              "Default",
-              "Boiler",
-              "1.11",
-            ],
-            "tags": Array [
-              "123123",
-              "234234",
-              "345345",
-            ],
-            "toDate": "2015-11-25T12:00:00Z",
-          },
-        ],
-      },
-      "items": Array [
-        Object {
-          "company": "test 123",
-          "created": "2019-04-16T12:03:37.493156",
-          "emailAddress": "dsg@dsf.com",
-          "firstName": "Clark",
-          "id": "1aa657bc-d556-4643-a68f-af46f1bdba89",
-          "lastName": "Kent",
-          "mobileNumber": "01234567890",
-          "notes": "fdsdfsfs",
-          "visits": Array [
-            Object {
-              "archetypeIds": Array [],
-              "fromDate": "2015-03-23T11:00:00Z",
-              "id": "d3aa88e2-c754-41e0-8ba6-4198a34aa0a2",
-              "lockGroups": Array [
-                "Default",
-                "Boiler",
-                "1.11",
-              ],
-              "tags": Array [
-                "123123",
-                "234234",
-                "345345",
-              ],
-              "toDate": "2015-11-25T12:00:00Z",
-            },
-          ],
-        },
-      ],
-    }
-  }
-  routing={
-    RoutingMock {
-      "breadcrumb": Array [],
-      "getBreadcrumb": [MockFunction],
-      "go": [MockFunction],
-      "goBack": [MockFunction],
-      "goBackToPage": [MockFunction],
-      "goForward": [MockFunction],
-      "goToPage": [MockFunction],
-      "history": Object {},
-      "location": Object {},
-      "push": [MockFunction],
-      "replace": [MockFunction],
-      "splitThings": [MockFunction],
-    }
-  }
-  visits={
-    VisitsMock {
-      "addTag": [Function],
-      "archetypes": Object {
-        "primary": Array [],
-        "secondary": Array [],
-      },
-      "clearErrors": [MockFunction],
-      "detail": Visit {
-        "archetypeIds": Array [],
-        "fromDate": "",
-        "id": "",
-        "lockGroups": Array [],
-        "tags": Array [],
-        "toDate": "",
-      },
-      "getArchetypes": [MockFunction],
-      "item": [Function],
-      "simulateValidationError": [Function],
-      "validationError": undefined,
-    }
-  }
-/>
+<Layout>
+  <inject-ErrorMessage-with-routing />
+</Layout>
 `;
 
 exports[`<ProfileDetail /> renders correctly 1`] = `
-<ProfileDetail
-  match={
-    Object {
-      "params": Object {
-        "profileId": "123",
-      },
-    }
-  }
-  profiles={
-    ProfilesMock {
-      "getDetail": [MockFunction],
-      "getList": [MockFunction],
-      "isError": false,
-      "isLoading": false,
-      "item": Object {
-        "company": "test 123",
-        "created": "2019-04-16T12:03:37.493156",
-        "emailAddress": "dsg@dsf.com",
-        "firstName": "Clark",
-        "id": "1aa657bc-d556-4643-a68f-af46f1bdba89",
-        "lastName": "Kent",
-        "mobileNumber": "01234567890",
-        "notes": "fdsdfsfs",
-        "visits": Array [
+<Layout>
+  <Component
+    component="div"
+    loaded={true}
+    loadedClassName="loadedContent"
+    parentClassName="loader"
+  >
+    <inject-DetailPanel-with-profiles-routing-visits
+      callback={[Function]}
+    />
+    <VisitsPanel
+      visits={
+        Array [
           Object {
             "archetypeIds": Array [],
             "fromDate": "2015-03-23T11:00:00Z",
@@ -157,106 +36,27 @@ exports[`<ProfileDetail /> renders correctly 1`] = `
             ],
             "toDate": "2015-11-25T12:00:00Z",
           },
-        ],
-      },
-      "items": Array [
-        Object {
-          "company": "test 123",
-          "created": "2019-04-16T12:03:37.493156",
-          "emailAddress": "dsg@dsf.com",
-          "firstName": "Clark",
-          "id": "1aa657bc-d556-4643-a68f-af46f1bdba89",
-          "lastName": "Kent",
-          "mobileNumber": "01234567890",
-          "notes": "fdsdfsfs",
-          "visits": Array [
-            Object {
-              "archetypeIds": Array [],
-              "fromDate": "2015-03-23T11:00:00Z",
-              "id": "d3aa88e2-c754-41e0-8ba6-4198a34aa0a2",
-              "lockGroups": Array [
-                "Default",
-                "Boiler",
-                "1.11",
-              ],
-              "tags": Array [
-                "123123",
-                "234234",
-                "345345",
-              ],
-              "toDate": "2015-11-25T12:00:00Z",
-            },
-          ],
-        },
-      ],
-    }
-  }
-  routing={
-    RoutingMock {
-      "breadcrumb": Array [],
-      "getBreadcrumb": [MockFunction],
-      "go": [MockFunction],
-      "goBack": [MockFunction],
-      "goBackToPage": [MockFunction],
-      "goForward": [MockFunction],
-      "goToPage": [MockFunction],
-      "history": Object {},
-      "location": Object {},
-      "push": [MockFunction],
-      "replace": [MockFunction],
-      "splitThings": [MockFunction],
-    }
-  }
-  visits={
-    VisitsMock {
-      "addTag": [Function],
-      "archetypes": Object {
-        "primary": Array [],
-        "secondary": Array [],
-      },
-      "clearErrors": [MockFunction],
-      "detail": Visit {
-        "archetypeIds": Array [],
-        "fromDate": "",
-        "id": "",
-        "lockGroups": Array [],
-        "tags": Array [],
-        "toDate": "",
-      },
-      "getArchetypes": [MockFunction],
-      "item": [Function],
-      "simulateValidationError": [Function],
-      "validationError": undefined,
-    }
-  }
-/>
+        ]
+      }
+    />
+  </Component>
+</Layout>
 `;
 
 exports[`<ProfileDetail /> renders correctly when NEW Profile 1`] = `
-<ProfileDetail
-  match={
-    Object {
-      "params": Object {
-        "profileId": "new",
-      },
-    }
-  }
-  profiles={
-    ProfilesMock {
-      "getDetail": [MockFunction],
-      "getList": [MockFunction],
-      "isError": false,
-      "isLoading": false,
-      "item": Object {
-        "company": "test 123",
-        "created": "2019-04-16T12:03:37.493156",
-        "emailAddress": "dsg@dsf.com",
-        "firstName": "Clark",
-        "id": "1aa657bc-d556-4643-a68f-af46f1bdba89",
-        "lastName": "Kent",
-        "mobileNumber": "01234567890",
-        "notes": "fdsdfsfs",
-        "visits": Array [
+<Layout>
+  <Component
+    component="div"
+    loaded={true}
+    loadedClassName="loadedContent"
+    parentClassName="loader"
+  >
+    <inject-DetailPanel-with-profiles-routing-visits
+      callback={[Function]}
+    />
+    <VisitsPanel
+      visits={
+        Array [
           Object {
             "archetypeIds": Array [],
             "fromDate": "2015-03-23T11:00:00Z",
@@ -273,106 +73,27 @@ exports[`<ProfileDetail /> renders correctly when NEW Profile 1`] = `
             ],
             "toDate": "2015-11-25T12:00:00Z",
           },
-        ],
-      },
-      "items": Array [
-        Object {
-          "company": "test 123",
-          "created": "2019-04-16T12:03:37.493156",
-          "emailAddress": "dsg@dsf.com",
-          "firstName": "Clark",
-          "id": "1aa657bc-d556-4643-a68f-af46f1bdba89",
-          "lastName": "Kent",
-          "mobileNumber": "01234567890",
-          "notes": "fdsdfsfs",
-          "visits": Array [
-            Object {
-              "archetypeIds": Array [],
-              "fromDate": "2015-03-23T11:00:00Z",
-              "id": "d3aa88e2-c754-41e0-8ba6-4198a34aa0a2",
-              "lockGroups": Array [
-                "Default",
-                "Boiler",
-                "1.11",
-              ],
-              "tags": Array [
-                "123123",
-                "234234",
-                "345345",
-              ],
-              "toDate": "2015-11-25T12:00:00Z",
-            },
-          ],
-        },
-      ],
-    }
-  }
-  routing={
-    RoutingMock {
-      "breadcrumb": Array [],
-      "getBreadcrumb": [MockFunction],
-      "go": [MockFunction],
-      "goBack": [MockFunction],
-      "goBackToPage": [MockFunction],
-      "goForward": [MockFunction],
-      "goToPage": [MockFunction],
-      "history": Object {},
-      "location": Object {},
-      "push": [MockFunction],
-      "replace": [MockFunction],
-      "splitThings": [MockFunction],
-    }
-  }
-  visits={
-    VisitsMock {
-      "addTag": [Function],
-      "archetypes": Object {
-        "primary": Array [],
-        "secondary": Array [],
-      },
-      "clearErrors": [MockFunction],
-      "detail": Visit {
-        "archetypeIds": Array [],
-        "fromDate": "",
-        "id": "",
-        "lockGroups": Array [],
-        "tags": Array [],
-        "toDate": "",
-      },
-      "getArchetypes": [MockFunction],
-      "item": [Function],
-      "simulateValidationError": [Function],
-      "validationError": undefined,
-    }
-  }
-/>
+        ]
+      }
+    />
+  </Component>
+</Layout>
 `;
 
 exports[`<ProfileDetail /> renders correctly when data is loading 1`] = `
-<ProfileDetail
-  match={
-    Object {
-      "params": Object {
-        "profileId": "123",
-      },
-    }
-  }
-  profiles={
-    Object {
-      "getDetail": [MockFunction],
-      "getList": [MockFunction],
-      "isError": false,
-      "isLoading": false,
-      "item": Object {
-        "company": "test 123",
-        "created": "2019-04-16T12:03:37.493156",
-        "emailAddress": "dsg@dsf.com",
-        "firstName": "Clark",
-        "id": "1aa657bc-d556-4643-a68f-af46f1bdba89",
-        "lastName": "Kent",
-        "mobileNumber": "01234567890",
-        "notes": "fdsdfsfs",
-        "visits": Array [
+<Layout>
+  <Component
+    component="div"
+    loaded={true}
+    loadedClassName="loadedContent"
+    parentClassName="loader"
+  >
+    <inject-DetailPanel-with-profiles-routing-visits
+      callback={[Function]}
+    />
+    <VisitsPanel
+      visits={
+        Array [
           Object {
             "archetypeIds": Array [],
             "fromDate": "2015-03-23T11:00:00Z",
@@ -389,107 +110,27 @@ exports[`<ProfileDetail /> renders correctly when data is loading 1`] = `
             ],
             "toDate": "2015-11-25T12:00:00Z",
           },
-        ],
-      },
-      "items": Array [
-        Object {
-          "company": "test 123",
-          "created": "2019-04-16T12:03:37.493156",
-          "emailAddress": "dsg@dsf.com",
-          "firstName": "Clark",
-          "id": "1aa657bc-d556-4643-a68f-af46f1bdba89",
-          "lastName": "Kent",
-          "mobileNumber": "01234567890",
-          "notes": "fdsdfsfs",
-          "visits": Array [
-            Object {
-              "archetypeIds": Array [],
-              "fromDate": "2015-03-23T11:00:00Z",
-              "id": "d3aa88e2-c754-41e0-8ba6-4198a34aa0a2",
-              "lockGroups": Array [
-                "Default",
-                "Boiler",
-                "1.11",
-              ],
-              "tags": Array [
-                "123123",
-                "234234",
-                "345345",
-              ],
-              "toDate": "2015-11-25T12:00:00Z",
-            },
-          ],
-        },
-      ],
-      "loading": true,
-    }
-  }
-  routing={
-    RoutingMock {
-      "breadcrumb": Array [],
-      "getBreadcrumb": [MockFunction],
-      "go": [MockFunction],
-      "goBack": [MockFunction],
-      "goBackToPage": [MockFunction],
-      "goForward": [MockFunction],
-      "goToPage": [MockFunction],
-      "history": Object {},
-      "location": Object {},
-      "push": [MockFunction],
-      "replace": [MockFunction],
-      "splitThings": [MockFunction],
-    }
-  }
-  visits={
-    VisitsMock {
-      "addTag": [Function],
-      "archetypes": Object {
-        "primary": Array [],
-        "secondary": Array [],
-      },
-      "clearErrors": [MockFunction],
-      "detail": Visit {
-        "archetypeIds": Array [],
-        "fromDate": "",
-        "id": "",
-        "lockGroups": Array [],
-        "tags": Array [],
-        "toDate": "",
-      },
-      "getArchetypes": [MockFunction],
-      "item": [Function],
-      "simulateValidationError": [Function],
-      "validationError": undefined,
-    }
-  }
-/>
+        ]
+      }
+    />
+  </Component>
+</Layout>
 `;
 
 exports[`<ProfileDetail /> renders correctly when on create mode 1`] = `
-<ProfileDetail
-  match={
-    Object {
-      "params": Object {
-        "profileId": "new",
-      },
-    }
-  }
-  profiles={
-    ProfilesMock {
-      "getDetail": [MockFunction],
-      "getList": [MockFunction],
-      "isError": false,
-      "isLoading": false,
-      "item": Object {
-        "company": "test 123",
-        "created": "2019-04-16T12:03:37.493156",
-        "emailAddress": "dsg@dsf.com",
-        "firstName": "Clark",
-        "id": "1aa657bc-d556-4643-a68f-af46f1bdba89",
-        "lastName": "Kent",
-        "mobileNumber": "01234567890",
-        "notes": "fdsdfsfs",
-        "visits": Array [
+<Layout>
+  <Component
+    component="div"
+    loaded={true}
+    loadedClassName="loadedContent"
+    parentClassName="loader"
+  >
+    <inject-DetailPanel-with-profiles-routing-visits
+      callback={[Function]}
+    />
+    <VisitsPanel
+      visits={
+        Array [
           Object {
             "archetypeIds": Array [],
             "fromDate": "2015-03-23T11:00:00Z",
@@ -506,107 +147,27 @@ exports[`<ProfileDetail /> renders correctly when on create mode 1`] = `
             ],
             "toDate": "2015-11-25T12:00:00Z",
           },
-        ],
-      },
-      "items": Array [
-        Object {
-          "company": "test 123",
-          "created": "2019-04-16T12:03:37.493156",
-          "emailAddress": "dsg@dsf.com",
-          "firstName": "Clark",
-          "id": "1aa657bc-d556-4643-a68f-af46f1bdba89",
-          "lastName": "Kent",
-          "mobileNumber": "01234567890",
-          "notes": "fdsdfsfs",
-          "visits": Array [
-            Object {
-              "archetypeIds": Array [],
-              "fromDate": "2015-03-23T11:00:00Z",
-              "id": "d3aa88e2-c754-41e0-8ba6-4198a34aa0a2",
-              "lockGroups": Array [
-                "Default",
-                "Boiler",
-                "1.11",
-              ],
-              "tags": Array [
-                "123123",
-                "234234",
-                "345345",
-              ],
-              "toDate": "2015-11-25T12:00:00Z",
-            },
-          ],
-        },
-      ],
-    }
-  }
-  routing={
-    RoutingMock {
-      "breadcrumb": Array [],
-      "getBreadcrumb": [MockFunction],
-      "go": [MockFunction],
-      "goBack": [MockFunction],
-      "goBackToPage": [MockFunction],
-      "goForward": [MockFunction],
-      "goToPage": [MockFunction],
-      "history": Object {},
-      "location": Object {},
-      "push": [MockFunction],
-      "replace": [MockFunction],
-      "splitThings": [MockFunction],
-    }
-  }
-  visits={
-    VisitsMock {
-      "addTag": [Function],
-      "archetypes": Object {
-        "primary": Array [],
-        "secondary": Array [],
-      },
-      "clearErrors": [MockFunction],
-      "detail": Visit {
-        "archetypeIds": Array [],
-        "fromDate": "",
-        "id": "",
-        "lockGroups": Array [],
-        "tags": Array [],
-        "toDate": "",
-      },
-      "getArchetypes": [MockFunction],
-      "item": [Function],
-      "simulateValidationError": [Function],
-      "validationError": undefined,
-    }
-  }
-/>
+        ]
+      }
+    />
+  </Component>
+</Layout>
 `;
 
 exports[`<ProfileDetail /> renders correctly when on edit mode 1`] = `
-<ProfileDetail
-  match={
-    Object {
-      "params": Object {
-        "profileId": "123",
-      },
-    }
-  }
-  profiles={
-    ProfilesMock {
-      "editing": true,
-      "getDetail": [MockFunction],
-      "getList": [MockFunction],
-      "isError": false,
-      "isLoading": false,
-      "item": Object {
-        "company": "test 123",
-        "created": "2019-04-16T12:03:37.493156",
-        "emailAddress": "dsg@dsf.com",
-        "firstName": "Clark",
-        "id": "1aa657bc-d556-4643-a68f-af46f1bdba89",
-        "lastName": "Kent",
-        "mobileNumber": "01234567890",
-        "notes": "fdsdfsfs",
-        "visits": Array [
+<Layout>
+  <Component
+    component="div"
+    loaded={true}
+    loadedClassName="loadedContent"
+    parentClassName="loader"
+  >
+    <inject-DetailPanel-with-profiles-routing-visits
+      callback={[Function]}
+    />
+    <VisitsPanel
+      visits={
+        Array [
           Object {
             "archetypeIds": Array [],
             "fromDate": "2015-03-23T11:00:00Z",
@@ -623,231 +184,9 @@ exports[`<ProfileDetail /> renders correctly when on edit mode 1`] = `
             ],
             "toDate": "2015-11-25T12:00:00Z",
           },
-        ],
-      },
-      "items": Array [
-        Object {
-          "company": "test 123",
-          "created": "2019-04-16T12:03:37.493156",
-          "emailAddress": "dsg@dsf.com",
-          "firstName": "Clark",
-          "id": "1aa657bc-d556-4643-a68f-af46f1bdba89",
-          "lastName": "Kent",
-          "mobileNumber": "01234567890",
-          "notes": "fdsdfsfs",
-          "visits": Array [
-            Object {
-              "archetypeIds": Array [],
-              "fromDate": "2015-03-23T11:00:00Z",
-              "id": "d3aa88e2-c754-41e0-8ba6-4198a34aa0a2",
-              "lockGroups": Array [
-                "Default",
-                "Boiler",
-                "1.11",
-              ],
-              "tags": Array [
-                "123123",
-                "234234",
-                "345345",
-              ],
-              "toDate": "2015-11-25T12:00:00Z",
-            },
-          ],
-        },
-      ],
-    }
-  }
-  routing={
-    RoutingMock {
-      "breadcrumb": Array [],
-      "getBreadcrumb": [MockFunction],
-      "go": [MockFunction],
-      "goBack": [MockFunction],
-      "goBackToPage": [MockFunction],
-      "goForward": [MockFunction],
-      "goToPage": [MockFunction],
-      "history": Object {},
-      "location": Object {},
-      "push": [MockFunction],
-      "replace": [MockFunction],
-      "splitThings": [MockFunction],
-    }
-  }
-  visits={
-    VisitsMock {
-      "addTag": [Function],
-      "archetypes": Object {
-        "primary": Array [],
-        "secondary": Array [],
-      },
-      "clearErrors": [MockFunction],
-      "detail": Visit {
-        "archetypeIds": Array [],
-        "fromDate": "",
-        "id": "",
-        "lockGroups": Array [],
-        "tags": Array [],
-        "toDate": "",
-      },
-      "getArchetypes": [MockFunction],
-      "item": [Function],
-      "simulateValidationError": [Function],
-      "validationError": undefined,
-    }
-  }
-/>
-`;
-
-exports[`<ProfileDetail /> renders correctly with data 1`] = `
-<ProfileDetail
-  match={
-    Object {
-      "params": Object {
-        "profileId": "123",
-      },
-    }
-  }
-  profiles={
-    Object {
-      "detail": Object {
-        "company": "Wayne Enterprises",
-        "created": "2014-03-25T12:00:00Z",
-        "emailAddress": "info@waine-enterprises.com",
-        "firstName": "Bruce",
-        "lastName": "Wayne",
-        "lockGroupNames": Array [
-          "Default",
-          "Boiler",
-          "1.11",
-        ],
-        "mobileNumber": "555-123-123",
-        "notes": "Gotham is safe",
-        "profileId": "wert34-324c523-2c356-c34c523-4c23456v23",
-        "type": "member",
-        "visits": Array [
-          Object {
-            "from": "2015-03-25T12:00:00Z",
-            "id": "q3w4c5-w34cr-w34cw34-5cw3-4cw345-3cw34t",
-            "tags": Array [
-              "123123",
-              "234234",
-              "345345",
-            ],
-            "to": "2015-03-25T12:00:00Z",
-          },
-          Object {
-            "from": "20190401T10:00:10.000Z",
-            "id": "vvv4c5-w34cr-w34cw34-5cbb-4cw345-3cw311",
-            "tags": Array [
-              "123123",
-              "234234",
-              "345345",
-            ],
-            "to": "20190501T10:00:10.000Z",
-          },
-        ],
-      },
-      "getDetail": [MockFunction],
-      "getList": [MockFunction],
-      "isError": false,
-      "isLoading": false,
-      "item": Object {
-        "company": "test 123",
-        "created": "2019-04-16T12:03:37.493156",
-        "emailAddress": "dsg@dsf.com",
-        "firstName": "Clark",
-        "id": "1aa657bc-d556-4643-a68f-af46f1bdba89",
-        "lastName": "Kent",
-        "mobileNumber": "01234567890",
-        "notes": "fdsdfsfs",
-        "visits": Array [
-          Object {
-            "archetypeIds": Array [],
-            "fromDate": "2015-03-23T11:00:00Z",
-            "id": "d3aa88e2-c754-41e0-8ba6-4198a34aa0a2",
-            "lockGroups": Array [
-              "Default",
-              "Boiler",
-              "1.11",
-            ],
-            "tags": Array [
-              "123123",
-              "234234",
-              "345345",
-            ],
-            "toDate": "2015-11-25T12:00:00Z",
-          },
-        ],
-      },
-      "items": Array [
-        Object {
-          "company": "test 123",
-          "created": "2019-04-16T12:03:37.493156",
-          "emailAddress": "dsg@dsf.com",
-          "firstName": "Clark",
-          "id": "1aa657bc-d556-4643-a68f-af46f1bdba89",
-          "lastName": "Kent",
-          "mobileNumber": "01234567890",
-          "notes": "fdsdfsfs",
-          "visits": Array [
-            Object {
-              "archetypeIds": Array [],
-              "fromDate": "2015-03-23T11:00:00Z",
-              "id": "d3aa88e2-c754-41e0-8ba6-4198a34aa0a2",
-              "lockGroups": Array [
-                "Default",
-                "Boiler",
-                "1.11",
-              ],
-              "tags": Array [
-                "123123",
-                "234234",
-                "345345",
-              ],
-              "toDate": "2015-11-25T12:00:00Z",
-            },
-          ],
-        },
-      ],
-    }
-  }
-  routing={
-    RoutingMock {
-      "breadcrumb": Array [],
-      "getBreadcrumb": [MockFunction],
-      "go": [MockFunction],
-      "goBack": [MockFunction],
-      "goBackToPage": [MockFunction],
-      "goForward": [MockFunction],
-      "goToPage": [MockFunction],
-      "history": Object {},
-      "location": Object {},
-      "push": [MockFunction],
-      "replace": [MockFunction],
-      "splitThings": [MockFunction],
-    }
-  }
-  visits={
-    VisitsMock {
-      "addTag": [Function],
-      "archetypes": Object {
-        "primary": Array [],
-        "secondary": Array [],
-      },
-      "clearErrors": [MockFunction],
-      "detail": Visit {
-        "archetypeIds": Array [],
-        "fromDate": "",
-        "id": "",
-        "lockGroups": Array [],
-        "tags": Array [],
-        "toDate": "",
-      },
-      "getArchetypes": [MockFunction],
-      "item": [Function],
-      "simulateValidationError": [Function],
-      "validationError": undefined,
-    }
-  }
-/>
+        ]
+      }
+    />
+  </Component>
+</Layout>
 `;

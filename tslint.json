@@ -1,27 +1,50 @@
 {
-	"plugins": ["prettier"],
+	"plugins": [
+		"prettier"
+	],
 	"extends": [
 		"tslint:recommended",
+		"tslint-config-airbnb",
 		"tslint-react",
-		"tslint-config-prettier",
-		"tslint-config-airbnb"
+		"tslint-config-prettier"
 	],
 	"rules": {
+		"max-classes-per-file": [true, 3],
+		"indent": [
+			true,
+			"spaces",
+			4
+		],
+		"prefer-array-literal": [true, { "allow-type-parameters": true }],
+		"import-name": false,
+		"variable-name": false,
 		"no-console": false,
-		"no-unused-variable": false,
-		"interface-name": [true, "never-prefix"],
+		"no-unused-variable": true,
+		"interface-name": [
+			true,
+			"never-prefix"
+		],
+		"no-empty-interface": false,
+		"no-increment-decrement": false,
 		"object-literal-sort-keys": false,
 		"jsx-no-lambda": false,
 		"ordered-imports": false,
 		"ban-types": false,
 		"semi": false,
-		"jsx-alignment": true,
+		"semicolon": false,
+		"jsx-alignment": false,
 		"jsx-boolean-value": true,
-		"jsx-curly-spacing": [true, "never"],
-		"jsx-equals-spacing": [true, "never"],
+		"jsx-curly-spacing": [
+			true,
+			"never"
+		],
+		"jsx-equals-spacing": [
+			true,
+			"never"
+		],
 		"jsx-key": true,
 		"jsx-no-bind": true,
-		"jsx-no-multiline-js": true,
+		"jsx-no-multiline-js": false,
 		"jsx-no-string-ref": true,
 		"jsx-self-close": true,
 		"jsx-wrap-multiline": true,
@@ -44,10 +67,24 @@
 	"linterOptions": {
 		"exclude": [
 			"**/*.js",
+			"**/*.test.ts",
+			"**/*.test.tsx",
 			"**/*.jsx",
-			"config/**/*.js",
 			"node_modules/**/*.ts",
-			"coverage/lcov-report/*.js"
+			"**/node_modules /**",
+			"**/coverage /**",
+			"**/release /**",
+			"**/public /**",
+			"**/karma /**",
+			"**/.idea /**v",
+			"**/.git /**",
+			"**/__tests__ /**",
+			"**/bin /**",
+			"**/tmp /**",
+			"**/test /**",
+			"**/config /**",
+			"**/build /**",
+			"**/scripts/**"
 		]
 	}
 }

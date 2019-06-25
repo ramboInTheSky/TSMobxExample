@@ -18,18 +18,6 @@ exports[`<Item /> renders correctly 1`] = `
 </ContextConsumer>
 `;
 
-exports[`<LockGroup /> renders correctly 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
-
-exports[`<LockGroup /> renders correctly 2`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
-
 exports[`<MenuHeader /> renders correctly 1`] = `
 <ContextConsumer>
   <Component />

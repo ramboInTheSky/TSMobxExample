@@ -35,7 +35,7 @@ describe('<VisitStore />', () => {
         const visit = Object.assign(new Visit(), { "lock_groups": [], "from_date": "2019-05-11T16:40:00.000Z", "to_date": null, "tags": [], "archetype_ids": ["9108859f-c93a-48dd-8e49-8725390d063d"] })
         await store.save(visit, 'profile-id')
         expect(axios.post).toHaveBeenCalledWith(
-            "https://csi-dev.thecollective.com/ac-api/profile/profile-id/visit",
+            "/profiles.json/profile-id/visit",
             {
                 "archetype_ids": ["9108859f-c93a-48dd-8e49-8725390d063d"],
                 "from_date": "2019-05-11T16:40:00.000Z",

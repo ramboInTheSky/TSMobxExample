@@ -52,7 +52,7 @@ export interface CreateVisitPanelConnectedProps extends CreateVisitPanelProps {
 export interface CreateVisitPanelState {
     from: Date
     to: Date | null
-    selectedArchetypes: Array<string>
+    selectedArchetypes: string[]
     noEndDate: boolean
 }
 
@@ -72,33 +72,34 @@ export class CreateVisitPanel extends Component<CreateVisitPanelProps, CreateVis
         }
     }
 
-    handleDateFromChange = (value: any) => {
+    public handleDateFromChange = (value: any) => {
         this.setState({ from: value })
     }
 
-    handleDateToChange = (value: any) => {
+    public handleDateToChange = (value: any) => {
         this.setState({ to: value })
     }
 
-    getFutureDate = () => {
+    public getFutureDate = () => {
         const today = new Date()
         return today.setFullYear(today.getFullYear() + 100)
     }
 
-    removeArchetype = (e: any, id: string) => {
+    public removeArchetype = (e: any, id: string) => {
         if (e) e.preventDefault()
         const { selectedArchetypes } = this.state
         this.setState({ selectedArchetypes: selectedArchetypes.filter(item => item !== id) })
     }
 
-    addArchetype = (e: any, id: string) => {
+    public addArchetype = (e: any, id: string) => {
         if (e) e.preventDefault()
         const { selectedArchetypes } = this.state
-        if (!selectedArchetypes.filter(item => item === id).length)
+        if (!selectedArchetypes.filter(item => item === id).length) {
             this.setState({ selectedArchetypes: [...selectedArchetypes, id] })
+        }
     }
 
-    save = (e?: any, navigate?: string) => {
+    public save = (e?: any, navigate?: string) => {
         const { from, to, selectedArchetypes, noEndDate } = this.state
         this.props.saveFn({
             fromDate: from.toISOString(),
@@ -107,11 +108,11 @@ export class CreateVisitPanel extends Component<CreateVisitPanelProps, CreateVis
         }, navigate)
     }
 
-    hideToDate = (e: any) => {
+    public hideToDate = (e: any) => {
         this.setState({ noEndDate: e.target.checked, to: null })
     }
 
-    render() {
+    public render() {
         const { archetypes } = this.store.visits
         const { item: profile } = this.store.profiles
         const { from, to, selectedArchetypes, noEndDate } = this.state
@@ -200,12 +201,12 @@ export class CreateVisitPanel extends Component<CreateVisitPanelProps, CreateVis
                             onClick={(e: any) => this.addArchetype(e, item.id)}
                         > {item.name}</Button></div>)}
                         <Dropdown
-                            autoWidth
+                            autoWidth={true}
                             value={'0'}
                             onChange={(e: any) => this.addArchetype(e, e.target.value)}>
-                            <MenuItem value="0" disabled>
+                            <MenuItem value="0" disabled={true}>
                                 Other Archetypes
-										</MenuItem>
+                                        </MenuItem>
                             {archetypes.secondary.map(item =>
                                 <MenuItem key={item.id} value={item.id} >{item.name}</MenuItem>
                             )}
@@ -231,7 +232,7 @@ export class CreateVisitPanel extends Component<CreateVisitPanelProps, CreateVis
                     <ActionsBar>
                         <Button variant="contained" onClick={() => this.store.routing.goToPage(`/profile/${this.store.profiles.item.id}`)}>
                             <KeyboardArrowLeftIcon />&nbsp; Cancel
-						</Button>
+                        </Button>
                         <ButtonsContainer>
 
                             <Button
@@ -241,7 +242,7 @@ export class CreateVisitPanel extends Component<CreateVisitPanelProps, CreateVis
                                 onClick={this.save}
                             >
                                 <SaveIcon />&nbsp; Save
-							</Button>
+                            </Button>
                             <Button
                                 className={'detail-panel-add-visit-button'}
                                 variant="contained"
