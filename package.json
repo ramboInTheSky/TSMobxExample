@@ -170,7 +170,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test:ci && npm version patch && git add *.json"
+      "pre-commit": "npm run test:ci"
     }
   }
 }
